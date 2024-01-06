@@ -5,13 +5,13 @@ using Microsoft.Xna.Framework.Input;
 using MonoMSDF2.Text;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MonoMSDF2
 {
     public class Game1 : Game
     {
         private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
         private TextRenderer2 textRenderer;
         private TextRenderer2 textRenderer2;
 
@@ -30,15 +30,8 @@ namespace MonoMSDF2
             Window.AllowUserResizing = true;
         }
 
-        protected override void Initialize()
-        {
-            base.Initialize();
-        }
-
         protected override void LoadContent()
         {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
-
             var effect = Content.Load<Effect>("FieldFontEffect");
             var font = Content.Load<FieldFont>("KiwiSoda");
             var font2 = Content.Load<FieldFont>("Germany");
@@ -66,8 +59,17 @@ namespace MonoMSDF2
             base.Update(gameTime);
         }
 
+        DateTime start;
+        DateTime end;
+        TimeSpan[] rendertimes = new TimeSpan[600];
+        int index;
+        int micro;
+
         protected override void Draw(GameTime gameTime)
         {
+            micro = rendertimes.Sum(x => x.Microseconds) / rendertimes.Length;
+            start = DateTime.Now;
+            
             GraphicsDevice.Clear(Color.Black);
             GraphicsDevice.BlendState = BlendState.AlphaBlend;
             GraphicsDevice.DepthStencilState = DepthStencilState.None;
@@ -82,6 +84,7 @@ namespace MonoMSDF2
 
             TextRenderer2 currentRenderer = mode ? textRenderer2 : textRenderer;
 
+            currentRenderer.Render($"Frametime: {micro.ToString("0000.0000")} Possible Framerate: {(micro > 0 ? 1000000 / micro : 0).ToString("000000.00")}", new Vector2(10, _graphics.PreferredBackBufferHeight - 40), new Vector2(1.5f));
             currentRenderer.Render($"Sin: {sin.ToString("+0.00;-0.00")}", new Vector2(10, 10), new Vector2(1, 1));
             currentRenderer.Render($"Cos: {cos.ToString("+0.00;-0.00")}", new Vector2(80, 10), new Vector2(1, 1));
             currentRenderer.Render($"Pos X: {pos.X.ToString("0000.000")}", new Vector2(170, 10), new Vector2(1, 1));
@@ -90,6 +93,11 @@ namespace MonoMSDF2
 
             float scale = (sin + 1f) * 3;
             currentRenderer.Render($"Scaling Text: {(scale * 100f).ToString("0.0")}%", new Vector2(_graphics.PreferredBackBufferWidth * 0.5f, 10), new Vector2(scale, scale));
+
+            end = DateTime.Now;
+
+            rendertimes[index++] = end - start;
+            if (index >= rendertimes.Length) index = 0;
         }
     }
 }

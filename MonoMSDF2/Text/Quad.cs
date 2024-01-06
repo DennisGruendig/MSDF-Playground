@@ -26,7 +26,7 @@ namespace MonoMSDF2.Text
                     new Vector2(1, 0))
             };
 
-            Indices = new short[] { 0, 1, 2, 2, 3, 0 };
+            Indices = [0, 1, 2, 2, 3, 0];
         }
 
         /// <summary>

@@ -1,5 +1,11 @@
-﻿#define VS_SHADERMODEL vs_5_0
-#define PS_SHADERMODEL ps_5_0
+﻿#if OPENGL
+	#define SV_POSITION POSITION
+	#define VS_SHADERMODEL vs_3_0
+	#define PS_SHADERMODEL ps_3_0
+#else
+	#define VS_SHADERMODEL vs_4_0_level_9_3
+	#define PS_SHADERMODEL ps_4_0_level_9_3
+#endif
 
 // Mix of the enhanced shader from https://discourse.libcinder.org/t/cinder-sdftext-initial-release-wip/171/13 and the original msdf shader
 
@@ -85,7 +91,7 @@ float4 MainPS(VertexShaderOutput input) : COLOR
 	color.a = pow(abs(ForegroundColor.a * opacity), 1.0f / 2.2f);
 	color.rgb = ForegroundColor.rgb * color.a;
 
-	return color + 0.3f;
+	return color;
 }
 
 float4 AltPS(VertexShaderOutput input) : COLOR
@@ -97,7 +103,7 @@ float4 AltPS(VertexShaderOutput input) : COLOR
 	sigDist = sigDist * dot(msdfUnit, 0.5f / fwidth(input.TexCoord));
 
 	float opacity = clamp(sigDist + 0.5f, 0.0f, 1.0f);
-    return ForegroundColor * opacity + 0.3f;
+	return ForegroundColor * opacity;
 }
 
 technique SmallText

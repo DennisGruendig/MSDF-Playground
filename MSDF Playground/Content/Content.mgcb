@@ -10,52 +10,15 @@
 
 #-------------------------------- References --------------------------------#
 
-/reference:..\..\DistanceFont\bin\Debug\DistanceFont.dll
+/reference:..\..\MSDF Font Library\bin\Debug\net6.0\MSDF Font Library.dll
 
 #---------------------------------- Content ---------------------------------#
 
-#begin DefaultFont.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:DefaultFont.spritefont
-
-#begin Germany.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=False
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Germany.png
-
-#begin GermanyChars/A.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=False
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:GermanyChars/A.png
-
-#begin GermanyChars/B.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=False
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:GermanyChars/B.png
+#begin FieldFontEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:FieldFontEffect.fx
 
 #begin MSDFShader.fx
 /importer:EffectImporter
@@ -63,111 +26,59 @@
 /processorParam:DebugMode=Auto
 /build:MSDFShader.fx
 
-#begin MSDFTexture_128xA.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=False
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:MSDFTexture_128xA.png
+#begin TrueTypeFonts/Bermuda.TTF
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/build:TrueTypeFonts/Bermuda.TTF
 
-#begin MSDFTexture_16xA.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=False
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:MSDFTexture_16xA.png
+#begin TrueTypeFonts/Connecticut.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/build:TrueTypeFonts/Connecticut.ttf
 
-#begin MSDFTexture_CretaIcon.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=False
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:MSDFTexture_CretaIcon.png
+#begin TrueTypeFonts/Germany.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/build:TrueTypeFonts/Germany.ttf
 
-#begin MSDFTexture_FontAtlas.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=False
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:MSDFTexture_FontAtlas.png
+#begin TrueTypeFonts/KiwiSoda.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/build:TrueTypeFonts/KiwiSoda.ttf
 
-#begin MSDFTexture_FontAtlas2.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=False
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:MSDFTexture_FontAtlas2.png
+#begin TrueTypeFonts/NDSBIOS.TTF
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/build:TrueTypeFonts/NDSBIOS.TTF
 
-#begin MSDFTexture_FontAtlas3.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=False
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:MSDFTexture_FontAtlas3.png
+#begin TrueTypeFonts/SanDiego.TTF
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/build:TrueTypeFonts/SanDiego.TTF
 
-#begin test.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=False
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:test.png
+#begin TrueTypeFonts/Suissnord.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/build:TrueTypeFonts/Suissnord.ttf
 
-#begin U+0024.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=False
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:U+0024.png
-
-#begin U+00242.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=False
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:U+00242.png
+#begin TrueTypeFonts/sylfaen.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/build:TrueTypeFonts/sylfaen.ttf
 

@@ -24,8 +24,8 @@
 /importer:FieldFontImporter
 /processor:FieldFontProcessor
 /processorParam:ExternalPath=msdfgen.exe
-/processorParam:Resolution=32
-/processorParam:Range=4
+/processorParam:Resolution=128
+/processorParam:Range=2
 /build:Germany.ini
 
 #begin KiwiSoda.ini

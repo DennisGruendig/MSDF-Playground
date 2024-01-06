@@ -22,11 +22,13 @@ namespace FontExtension
             PxRangeBackend = pxRange;
             KerningPairsBackend = kerningPairs.ToList();
 
-            Glyphs = new Dictionary<char, FieldGlyph>(glyphs.Count);
-            foreach (var glyph in glyphs)
-            {
-                Glyphs.Add(glyph.Character, glyph);
-            }
+            //Glyphs = new Dictionary<char, FieldGlyph>(glyphs.Count);
+            //foreach (var glyph in glyphs)
+            //{
+            //    Glyphs.Add(glyph.Character, glyph);
+            //}
+
+            Glyphs = glyphs.ToDictionary(x => x.Character, x => x);
         }
 
         /// <summary>

@@ -76,7 +76,7 @@ namespace FontExtension
             {
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
-                Arguments = $"-font \"{font.Path}\" {(int)c} -o \"{outputPath}\" -size {this.Resolution} {this.Resolution} -pxrange {this.Range} -autoframe -printmetrics"                
+                Arguments = $"-font \"{font.Path}\" {(int)c} -o \"{outputPath}\" -size {Resolution} {Resolution} -pxrange {Range} -autoframe -printmetrics"                
             };
 
             var process = System.Diagnostics.Process.Start(startInfo);
