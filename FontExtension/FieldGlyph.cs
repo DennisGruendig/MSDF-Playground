@@ -15,22 +15,22 @@ namespace FontExtension
 
         public FieldGlyph(char character, byte[] bitmap, Metrics metrics)
         {
-            this.CharacterBackend = character;
-            this.BitmapBackend = bitmap;
-            this.MetricsBackend = metrics;
+            CharacterBackend = character;
+            BitmapBackend = bitmap;
+            MetricsBackend = metrics;
         }
         
         /// <summary>
         /// The character this glyph represents
         /// </summary>
-        public char Character => this.CharacterBackend;
+        public char Character => CharacterBackend;
         /// <summary>
         /// Distance field for this character
         /// </summary>
-        public byte[] Bitmap => this.BitmapBackend;                
+        public byte[] Bitmap => BitmapBackend;                
         /// <summary>
         /// Metrics for this character
         /// </summary>
-        public Metrics Metrics => this.MetricsBackend;
+        public Metrics Metrics => MetricsBackend;
     }
 }

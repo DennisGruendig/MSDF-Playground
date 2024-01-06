@@ -11,9 +11,9 @@ namespace MonoMSDF2.Text
 
         public GlyphRenderInfo(char character, Texture2D texture, Metrics metrics)
         {
-            this.Character = character;
-            this.Texture = texture;
-            this.Metrics = metrics;
+            Character = character;
+            Texture = texture;
+            Metrics = metrics;
         }
     }
 }

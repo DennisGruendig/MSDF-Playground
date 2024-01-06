@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoMSDF2.Text;
 using System;
+using System.Collections.Generic;
 
 namespace MonoMSDF2
 {
@@ -39,11 +40,12 @@ namespace MonoMSDF2
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             var effect = Content.Load<Effect>("FieldFontEffect");
-            //var font = Content.Load<FieldFont>("arial");
             var font = Content.Load<FieldFont>("KiwiSoda");
-            var font2 = Content.Load<FieldFont>("arial");
+            var font2 = Content.Load<FieldFont>("Germany");
 
             textRenderer = new TextRenderer2(effect, font, GraphicsDevice);
+            textRenderer.OptimizeForTinyText = true;
+
             textRenderer2 = new TextRenderer2(effect, font2, GraphicsDevice);
         }
 
@@ -80,13 +82,14 @@ namespace MonoMSDF2
 
             TextRenderer2 currentRenderer = mode ? textRenderer2 : textRenderer;
 
-            currentRenderer.Render($"Sin: {sin.ToString("+0.00;-0.00")}", new Vector2(10, 10), new Vector2(1, 1), GraphicsDevice);
-            currentRenderer.Render($"Cos: {cos.ToString("+0.00;-0.00")}", new Vector2(80, 10), new Vector2(1, 1), GraphicsDevice);
-            currentRenderer.Render($"Pos X: {pos.X.ToString("0000.000")}", new Vector2(170, 10), new Vector2(1, 1), GraphicsDevice);
-            currentRenderer.Render($"Pos Y: {pos.Y.ToString("0000.000")}", new Vector2(290, 10), new Vector2(1, 1), GraphicsDevice);
-            currentRenderer.Render($"Pos: {pos.X.ToString("0000.000")} / {pos.Y.ToString("0000.000")}", pos, new Vector2(3, 3), GraphicsDevice);
+            currentRenderer.Render($"Sin: {sin.ToString("+0.00;-0.00")}", new Vector2(10, 10), new Vector2(1, 1));
+            currentRenderer.Render($"Cos: {cos.ToString("+0.00;-0.00")}", new Vector2(80, 10), new Vector2(1, 1));
+            currentRenderer.Render($"Pos X: {pos.X.ToString("0000.000")}", new Vector2(170, 10), new Vector2(1, 1));
+            currentRenderer.Render($"Pos Y: {pos.Y.ToString("0000.000")}", new Vector2(290, 10), new Vector2(1, 1));
+            currentRenderer.Render($"Pos: {pos.X.ToString("0000.000")} / {pos.Y.ToString("0000.000")}", pos, new Vector2(3, 3));
 
-            currentRenderer.Render($"Scaling Text: {sin.ToString("+0.00;-0.00")}", new Vector2(_graphics.PreferredBackBufferWidth * 0.5f, 10), new Vector2(sin + 1, sin + 1), GraphicsDevice);
+            float scale = (sin + 1f) * 3;
+            currentRenderer.Render($"Scaling Text: {(scale * 100f).ToString("0.0")}%", new Vector2(_graphics.PreferredBackBufferWidth * 0.5f, 10), new Vector2(scale, scale));
         }
     }
 }

@@ -10,7 +10,7 @@ namespace MonoMSDF2.Text
 
         public Quad()
         {
-            this.Vertices = new[]
+            Vertices = new[]
             {
                 new VertexPositionTexture(
                     new Vector3(0, 0, 0),
@@ -26,7 +26,7 @@ namespace MonoMSDF2.Text
                     new Vector2(1, 0))
             };
 
-            this.Indices = new short[] { 0, 1, 2, 2, 3, 0 };
+            Indices = new short[] { 0, 1, 2, 2, 3, 0 };
         }
 
         /// <summary>
@@ -37,26 +37,19 @@ namespace MonoMSDF2.Text
 
         public void Render(GraphicsDevice device, Vector2 v1, Vector2 v2)
         {
-            this.Vertices[0].Position.X = v2.X;
-            this.Vertices[0].Position.Y = v1.Y;
+            Vertices[0].Position.X = v2.X;
+            Vertices[0].Position.Y = v1.Y;
 
-            this.Vertices[1].Position.X = v1.X;
-            this.Vertices[1].Position.Y = v1.Y;
+            Vertices[1].Position.X = v1.X;
+            Vertices[1].Position.Y = v1.Y;
 
-            this.Vertices[2].Position.X = v1.X;
-            this.Vertices[2].Position.Y = v2.Y;
+            Vertices[2].Position.X = v1.X;
+            Vertices[2].Position.Y = v2.Y;
 
-            this.Vertices[3].Position.X = v2.X;
-            this.Vertices[3].Position.Y = v2.Y;
+            Vertices[3].Position.X = v2.X;
+            Vertices[3].Position.Y = v2.Y;
 
-            device.DrawUserIndexedPrimitives(
-                PrimitiveType.TriangleList,
-                this.Vertices,
-                0,
-                4,
-                this.Indices,
-                0,
-                2);
+            device.DrawUserIndexedPrimitives(PrimitiveType.TriangleList, Vertices, 0, 4, Indices, 0, 2);
         }
     }
 }

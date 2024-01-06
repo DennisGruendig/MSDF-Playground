@@ -16,13 +16,13 @@ namespace FontExtension
 
         public Metrics(float advance, float scale, Vector2 translation)
         {
-            this.AdvanceBackend = advance;
-            this.ScaleBackend = scale;
-            this.TranslationBackend = translation;
+            AdvanceBackend = advance;
+            ScaleBackend = scale;
+            TranslationBackend = translation;
         }
 
-        public float Advance => this.AdvanceBackend;
-        public float Scale => this.ScaleBackend;
-        public Vector2 Translation => this.TranslationBackend;
+        public float Advance => AdvanceBackend;
+        public float Scale => ScaleBackend;
+        public Vector2 Translation => TranslationBackend;
     }
 }

@@ -14,19 +14,19 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin arial.ini
-/importer:FieldFontImporter
-/processor:FieldFontProcessor
-/processorParam:ExternalPath=msdfgen.exe
-/processorParam:Resolution=32
-/processorParam:Range=4
-/build:arial.ini
-
 #begin FieldFontEffect.fx
 /importer:EffectImporter
 /processor:EffectProcessor
 /processorParam:DebugMode=Auto
 /build:FieldFontEffect.fx
+
+#begin Germany.ini
+/importer:FieldFontImporter
+/processor:FieldFontProcessor
+/processorParam:ExternalPath=msdfgen.exe
+/processorParam:Resolution=32
+/processorParam:Range=4
+/build:Germany.ini
 
 #begin KiwiSoda.ini
 /importer:FieldFontImporter

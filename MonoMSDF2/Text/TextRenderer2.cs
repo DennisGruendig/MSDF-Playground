@@ -40,7 +40,7 @@ namespace MonoMSDF2.Text
         /// </summary>
         public bool OptimizeForTinyText { get; set; }
 
-        public void Render(string text, Vector2 position, Vector2 scale, GraphicsDevice graphicsDevice)
+        public void Render(string text, Vector2 position, Vector2 scale)
         {
             if (string.IsNullOrEmpty(text))
                 return;
@@ -49,14 +49,14 @@ namespace MonoMSDF2.Text
             var textureWidth = sequence[0].Texture.Width;
             var textureHeight = sequence[0].Texture.Height;
 
+            var fullWidth = sequence.Select(x => x.Texture.Width).Sum();
+
             var world = Matrix.CreateWorld(new Vector3(0, 0, 0), Vector3.Forward, Vector3.Up);
             var view = Matrix.CreateLookAt(Vector3.Backward, Vector3.Forward, Vector3.Up);
-            var projection = Matrix.CreateOrthographicOffCenter(0, graphicsDevice.Viewport.Width, 0, graphicsDevice.Viewport.Height, 0, 1000);
+            var projection = Matrix.CreateOrthographicOffCenter(0, Device.Viewport.Width, 0, Device.Viewport.Height, 0, 1000);
 
-            var translation = Matrix.CreateTranslation(2f / graphicsDevice.Viewport.Width * position.X, 2f / graphicsDevice.Viewport.Height * position.Y, 0);
+            var translation = Matrix.CreateTranslation(2f / Device.Viewport.Width * position.X, 2f / Device.Viewport.Height * position.Y, 0);
             var scaling = Matrix.CreateScale(scale.X, scale.Y, 1f);
-
-            //var translation = Matrix.CreateTranslation(1.5f, 1.5f, 0);
 
             Effect.Parameters["WorldViewProjection"].SetValue(scaling * world * view * projection * translation);
             Effect.Parameters["PxRange"].SetValue(Font.PxRange);
