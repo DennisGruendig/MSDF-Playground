@@ -1,4 +1,3 @@
-using MSDF_Font_Library;
 using MSDF_Font_Library.FontAtlas;
 using System.ComponentModel;
 using System.Diagnostics;

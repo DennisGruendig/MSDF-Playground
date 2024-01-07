@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using MSDF_Font_Library;
 using MSDF_Font_Library.Content;
+using MSDF_Font_Library.Datatypes;
 using MSDF_Font_Library.FontAtlas;
 using MSDF_Font_Library.Rendering;
 using System;
@@ -18,7 +18,7 @@ namespace MSDF_Playground
         private readonly List<MissingCharacterInfo> _MissingCharacters = MissingCharacters.CharacterList;
 
         private GraphicsDeviceManager _graphics;
-        //private SpriteBatch _spriteBatch;
+        private SpriteBatch _spriteBatch;
         private ShaderFontBatch _ShaderFontBatch;
         private Effect MSDFshader;
         private ShaderFont Font;
@@ -46,12 +46,15 @@ namespace MSDF_Playground
         private int spanindex = 0;
         private bool showSpan = false;
 
+        private VerticalAlignment valign = VerticalAlignment.Middle;
+        private HorizontalAlignment halign = HorizontalAlignment.Center;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this)
             {
                 PreferredBackBufferWidth = 1800,
-                PreferredBackBufferHeight = 400,
+                PreferredBackBufferHeight = 800,
                 SynchronizeWithVerticalRetrace = false,
                 GraphicsProfile = GraphicsProfile.HiDef
             };
@@ -67,14 +70,14 @@ namespace MSDF_Playground
 
         protected override void LoadContent()
         {
-            //_spriteBatch = new SpriteBatch(GraphicsDevice);
+            _spriteBatch = new SpriteBatch(GraphicsDevice);
             MSDFshader = Content.Load<Effect>("MSDFShader");
 
             Font = Content.Load<ShaderFont>("TrueTypeFonts/Germany");
             Font.Initialize(GraphicsDevice);
 
             chars = (DEF_CHARSET + DEF_CHARSET).Substring(index, chars.Length).ToArray();
-            firstLetter = new Glyph(Font.AtlasRoot, Font.GetGlyph(chars[0]));
+            firstLetter = Font.GetGlyph(chars[0]);
 
             _ShaderFontBatch = new ShaderFontBatch(GraphicsDevice, Font, MSDFshader);
         }
@@ -88,7 +91,8 @@ namespace MSDF_Playground
 
             if (gameTime.TotalGameTime >= next)
             {
-                next = gameTime.TotalGameTime.Add(TimeSpan.FromMilliseconds(300));
+                next = gameTime.TotalGameTime.Add(TimeSpan.FromMilliseconds(500));
+
             }
 
             Size +=  0.1f * (mstate.ScrollWheelValue - pmstate.ScrollWheelValue);
@@ -98,6 +102,14 @@ namespace MSDF_Playground
                 Position += (mstate.Position - pmstate.Position).ToVector2();
             }
 
+            if (kstate.IsKeyDown(Keys.Left)) halign = HorizontalAlignment.Right;
+            else if (kstate.IsKeyDown(Keys.Right)) halign = HorizontalAlignment.Left;
+            else halign = HorizontalAlignment.Center;
+
+            if (kstate.IsKeyDown(Keys.Up)) valign = VerticalAlignment.Bottom;
+            else if (kstate.IsKeyDown(Keys.Down)) valign = VerticalAlignment.Top;
+            else valign = VerticalAlignment.Middle;
+            
             if (kstate.IsKeyDown(Keys.Space) && !pkstate.IsKeyDown(Keys.Space))
             {
                 switch (fontIndex)
@@ -110,9 +122,9 @@ namespace MSDF_Playground
                         fontIndex++; break;
                     case 2:
                         Font = Content.Load<ShaderFont>("TrueTypeFonts/Connecticut");
-                        fontIndex++; break;
+                        fontIndex++; fontIndex++; break;
                     case 3:
-                        Font = Content.Load<ShaderFont>("TrueTypeFonts/Suissnord");
+                        //Font = Content.Load<ShaderFont>("TrueTypeFonts/Suissnord");
                         fontIndex++; break;
                     case 4:
                         Font = Content.Load<ShaderFont>("TrueTypeFonts/Bermuda");
@@ -129,7 +141,7 @@ namespace MSDF_Playground
                 }
                 Font.Initialize(GraphicsDevice);
                 _ShaderFontBatch.Font = Font;
-                firstLetter = new Glyph(Font.AtlasRoot, Font.GetGlyph(chars[0]));
+                firstLetter = Font.GetGlyph(chars[0]);
             }
 
             base.Update(gameTime);
@@ -151,27 +163,45 @@ namespace MSDF_Playground
             scrollOffset -= (float)gameTime.ElapsedGameTime.TotalSeconds * 150;
 
             if (MathF.Abs(scrollOffset) > firstLetter.Advance)
-            { 
+            {
                 scrollOffset += (float)firstLetter.Advance;
                 index++;
                 if (index >= DEF_CHARSET.Length)
                     index = 0;
 
                 chars = (DEF_CHARSET + DEF_CHARSET).Substring(index, chars.Length).ToArray();
-                firstLetter = new Glyph(Font.AtlasRoot, Font.GetGlyph(chars[0]));
+                firstLetter = Font.GetGlyph(chars[0]);
             }
 
             string frameMessage = string.Empty;
             if (showSpan)
-                frameMessage = $"Frame: {(spanlist.Select(x => x.TotalMicroseconds).Sum() / spanlist.Length).ToString("00000.000")}";
+                frameMessage = $"µs: {(spanlist.Select(x => x.TotalMicroseconds).Sum() / spanlist.Length).ToString("000.0")}";
             else
-                frameMessage = $"Frame: {spanindex.ToString("000")} / {spanlist.Length.ToString("000")}";
+                frameMessage = $"µs: {spanindex.ToString("000")} / {spanlist.Length.ToString("000")}";
+
+            float lineOffset = Font.LineOffset;
+
+            _spriteBatch.Begin();
+
+            var vp = GraphicsDevice.Viewport;
+            var mid = new Vector2(vp.Width * 0.5f, vp.Height * 0.5f);
+            var pixelbl = new Texture2D(GraphicsDevice, 1, 1);
+            pixelbl.SetData(new Color[] { Color.Black });
+            Color lineIntensity = new Color(1, 1, 1, 0.3f);
+
+            // Horizontal
+            _spriteBatch.Draw(pixelbl, new Rectangle(0, (int)mid.Y - 1, vp.Width, 2), lineIntensity);
+
+            // Vertical
+            _spriteBatch.Draw(pixelbl, new Rectangle((int)mid.X - 1, 0, 2, vp.Height), lineIntensity);
+            
+            _spriteBatch.End();
 
             start = DateTime.Now;
 
             _ShaderFontBatch.Begin();
-            _ShaderFontBatch.DrawString(frameMessage, new Vector2((int)(5 + Position.X), (int)(100 + Position.Y)));
-            _ShaderFontBatch.DrawString(new string(chars), new Vector2(0 + scrollOffset, _graphics.PreferredBackBufferHeight * 0.75f));
+            _ShaderFontBatch.DrawString(frameMessage, new Vector2(_graphics.PreferredBackBufferWidth * 0.5f, _graphics.PreferredBackBufferHeight * 0.5f), vAlign: valign, hAlign: halign);
+            _ShaderFontBatch.DrawString(new string(chars), new Vector2(0 + scrollOffset, _graphics.PreferredBackBufferHeight - lineOffset));
             _ShaderFontBatch.End();
 
             spanlist[spanindex++] = DateTime.Now - start;

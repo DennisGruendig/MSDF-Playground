@@ -1,23 +1,15 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content.Pipeline;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Content.Pipeline;
 using MSDF_Font_Library.FontAtlas;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 using System.Text.Json;
-using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
 
 namespace MSDF_Font_Library.Content
 {
-    [ContentProcessor(DisplayName = "Shader Font Processor")]
+    [ContentProcessor(DisplayName = "Shader Font Processor - MSDF Font Library")]
     internal class ShaderFontProcessor : ContentProcessor<ImportData, ShaderFont>
     {
         [DisplayName("Resolution")]
@@ -30,52 +22,62 @@ namespace MSDF_Font_Library.Content
         [DefaultValue(2)]
         public virtual uint DistanceRange { get; set; } = 2;
 
-        private const string DEF_CHARSET = "\"ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜabcdefghijklmnopqrstuvwxyzäöü1234567890/*-+,.!?ß´`'°^_:;²³{[]}§$%&()©€@=<>|#~ \\\"\\\\\"";
+        [DisplayName("Charset Definition (optional)")]
+        [Description("String of all the chars, for which to create glyphs")]
+        public virtual string CharsetDefinition { get; set; } = string.Empty;
+
+        private const string DEF_CHARSET = "ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜabcdefghijklmnopqrstuvwxyzäöü1234567890/*-+,.!?ß´`'°^_:;²³{[]}§$%&()©€@=<>|#~ \\\"\\\\µ";
         private ImportData _ImportData;
 
         public override ShaderFont Process(ImportData input, ContentProcessorContext context)
         {
             _ImportData = input;
 
-            if (!File.Exists(_ImportData.Charset))
-                File.WriteAllText(_ImportData.Charset, DEF_CHARSET);
+            if (string.IsNullOrEmpty(CharsetDefinition))
+                CharsetDefinition = DEF_CHARSET;
 
-            var atlas = CreateFontAtlas();
-            return new ShaderFont(_ImportData.Name, atlas);
+            File.WriteAllText(_ImportData.Charset, $"\"{CharsetDefinition}\"");
+            if (!File.Exists(_ImportData.Charset))
+                throw new InvalidOperationException("Could not find Charset.txt");
+
+            JsonRoot atlas = CreateFontAtlas();
+
+            if (!File.Exists(_ImportData.Bitmap))
+                throw new InvalidOperationException("Could not find Atlas.bmp");
+
+            byte[] bitmap = File.ReadAllBytes(_ImportData.Bitmap);
+
+            return new ShaderFont(_ImportData.Name, atlas, bitmap);
         }
 
         private JsonRoot CreateFontAtlas()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append($"-font \"{_ImportData.FontFile}\" ");
-            sb.Append($"-imageout \"{_ImportData.Bitmap}\" ");
-            sb.Append($"-size {Resolution} -pxrange {DistanceRange} ");
-            sb.Append($"-json \"{_ImportData.Json}\" ");
-            sb.Append($"-charset \"{_ImportData.Charset}\" ");
+            StringBuilder args = new StringBuilder();
+            args.Append($"-font \"{_ImportData.FontFile}\" ");
+            args.Append($"-imageout \"{_ImportData.Bitmap}\" ");
+            args.Append($"-size {Resolution} -pxrange {DistanceRange} ");
+            args.Append($"-json \"{_ImportData.Json}\" ");
+            args.Append($"-charset \"{_ImportData.Charset}\" ");
 
             var startInfo = new ProcessStartInfo(_ImportData.AtlasGenerator)
             {
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
-                Arguments = sb.ToString()
+                Arguments = args.ToString()
             };
 
             var process = System.Diagnostics.Process.Start(startInfo);
             if (process is null)
                 throw new InvalidOperationException("Could not start msdf-atlas-gen.exe");
-
             process.WaitForExit();
-            return ParseJson();
-        }
 
-        private JsonRoot ParseJson()
-        {
             if (!File.Exists(_ImportData.Json))
-                throw new InvalidOperationException("Could not load Output.json");
+                throw new InvalidOperationException("Could not find Output.json");
+
             string jsonString = File.ReadAllText(_ImportData.Json);
-            var result = JsonSerializer.Deserialize<JsonRoot>(jsonString, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-            result.BitmapData = File.ReadAllBytes(_ImportData.Bitmap);
-            return result;
+            JsonRoot deserialized = JsonSerializer.Deserialize<JsonRoot>(jsonString, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+            return deserialized;
         }
 
     }

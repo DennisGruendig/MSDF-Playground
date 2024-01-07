@@ -1,5 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using MSDF_Font_Library.Content;
+using MSDF_Font_Library.Datatypes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,51 +13,39 @@ namespace MSDF_Font_Library.FontAtlas
 {
     public class Glyph
     {
-        private char _Character;
-        private double _Advance;
-        private Vector2 _AtlasSize;
-        private Vector2 _AtlasOrigin;
-        private Vector2 _PlaneOrigin;
-        private Vector2 _PlaneOffset;
-        private Rectangle _AtlasRectangle;
+        [ContentSerializerIgnore] private readonly ShaderFont _Font;
+        [ContentSerializer] private readonly char _Character;
+        [ContentSerializer] private readonly float _Advance;
+        [ContentSerializer] private readonly Rectangle _AtlasSource;
+        [ContentSerializer] private readonly RectangleF _CursorBounds;
 
-        public Glyph(JsonRoot jsonRoot, JsonGlyph jsonGlyph)
+        public Glyph() { }
+
+        public Glyph(ShaderFont font, JsonGlyph glyph)
         {
-            _Character = (char)jsonGlyph.Unicode;
-            _Advance = jsonGlyph.Advance * jsonRoot.Atlas.Size;
+            _Font = font;
+            _Character = (char)glyph.Unicode;
+            _Advance = (float)(glyph.Advance * font.FontSize);
 
-            if (!(jsonGlyph.Unicode == 32))
+            if (!(glyph.Unicode == 32))
             {
-                _AtlasSize = new Vector2(
-                    (float)(jsonGlyph.AtlasBounds.Right - jsonGlyph.AtlasBounds.Left),
-                    (float)(jsonGlyph.AtlasBounds.Top - jsonGlyph.AtlasBounds.Bottom));
+                _AtlasSource = new Rectangle(
+                    (int)(glyph.AtlasBounds.Left),
+                    (int)(font.AtlasHeight - glyph.AtlasBounds.Bottom - (glyph.AtlasBounds.Top - glyph.AtlasBounds.Bottom)),
+                    (int)(glyph.AtlasBounds.Right - glyph.AtlasBounds.Left),
+                    (int)(glyph.AtlasBounds.Top - glyph.AtlasBounds.Bottom));
 
-                _AtlasOrigin = new Vector2(
-                    (float)jsonGlyph.AtlasBounds.Left,
-                    (float)(jsonRoot.Atlas.Height - jsonGlyph.AtlasBounds.Bottom - AtlasSize.Y));
-
-                _AtlasRectangle = new Rectangle(
-                    (int)AtlasOrigin.X,
-                    (int)AtlasOrigin.Y,
-                    (int)AtlasSize.X,
-                    (int)AtlasSize.Y);
-
-                _PlaneOrigin = new Vector2(
-                    (float)(jsonGlyph.PlaneBounds.Left * jsonRoot.Atlas.Size),
-                    (float)(-jsonGlyph.PlaneBounds.Top * jsonRoot.Atlas.Size));
-
-                _PlaneOffset = new Vector2(
-                    (float)(jsonGlyph.PlaneBounds.Right * jsonRoot.Atlas.Size),
-                    (float)(-jsonGlyph.PlaneBounds.Bottom * jsonRoot.Atlas.Size));
+                _CursorBounds = new RectangleF(
+                    (float)(glyph.PlaneBounds.Left * font.FontSize),
+                    (float)(-glyph.PlaneBounds.Top * font.FontSize + font.Ascender * font.FontSize),
+                    (float)(glyph.PlaneBounds.Right * font.FontSize),
+                    (float)(glyph.PlaneBounds.Bottom * font.FontSize));
             }
         }
 
         public char Character { get => _Character; }
-        public double Advance { get => _Advance; }
-        public Vector2 AtlasSize { get => _AtlasSize; }
-        public Vector2 AtlasOrigin { get => _AtlasOrigin; }
-        public Vector2 PlaneOrigin { get => _PlaneOrigin; }
-        public Vector2 PlaneOffset { get => _PlaneOffset; }
-        public Rectangle AtlasRectangle { get => _AtlasRectangle; }
+        public Rectangle AtlasSource { get => _AtlasSource; }
+        public float Advance { get => _Advance; }
+        public RectangleF CursorBounds { get => _CursorBounds; }
     }
 }

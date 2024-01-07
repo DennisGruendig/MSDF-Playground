@@ -14,6 +14,6 @@ namespace MSDF_Font_Library.FontAtlas
         //public List<object> Kerning { get; set; }
 
         // ToDo Löschen
-        public byte[] BitmapData { get; set; }
+        //public byte[] BitmapData { get; set; }
     }
 }
