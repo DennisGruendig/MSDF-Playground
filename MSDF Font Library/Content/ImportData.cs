@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MSDF_Font_Library
+namespace MSDF_Font_Library.Content
 {
     public class ImportData
     {

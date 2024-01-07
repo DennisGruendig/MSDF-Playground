@@ -2,11 +2,11 @@
 {
     public class JsonMetrics
     {
-        public float EmSize { get; set; }
-        public float LineHeight { get; set; }
-        public float Ascender { get; set; }
-        public float Descender { get; set; }
-        public float UnderlineY { get; set; }
-        public float UnderlineThickness { get; set; }
+        public double EmSize { get; set; }
+        public double LineHeight { get; set; }
+        public double Ascender { get; set; }
+        public double Descender { get; set; }
+        public double UnderlineY { get; set; }
+        public double UnderlineThickness { get; set; }
     }
 }

@@ -5,6 +5,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
+using MSDF_Font_Library.Content;
 
 namespace MSDF_Font_Library
 {
@@ -19,7 +20,7 @@ namespace MSDF_Font_Library
 
         public ShaderFont(string name, JsonRoot atlasRoot)
         {
-            _Fallback = '#';
+            _Fallback = '?';
             _Name = name;
             _AtlasRoot = atlasRoot;
             _Glyphs = atlasRoot.Glyphs.ToDictionary(x => (char)x.Unicode, x => x);

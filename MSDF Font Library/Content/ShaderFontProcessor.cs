@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
 
-namespace MSDF_Font_Library
+namespace MSDF_Font_Library.Content
 {
     [ContentProcessor(DisplayName = "Shader Font Processor")]
     internal class ShaderFontProcessor : ContentProcessor<ImportData, ShaderFont>

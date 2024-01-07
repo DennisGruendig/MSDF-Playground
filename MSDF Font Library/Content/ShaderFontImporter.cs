@@ -3,7 +3,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace MSDF_Font_Library
+namespace MSDF_Font_Library.Content
 {
     [ContentImporter(".ttf", DisplayName = "Shader Font Importer", DefaultProcessor = "ShaderFontProcessor")]
     public class ShaderFontImporter : ContentImporter<ImportData>
