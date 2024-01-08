@@ -89,12 +89,6 @@ namespace MSDF_Playground
             pmstate = mstate;
             mstate = Mouse.GetState();
 
-            if (gameTime.TotalGameTime >= next)
-            {
-                next = gameTime.TotalGameTime.Add(TimeSpan.FromMilliseconds(500));
-
-            }
-
             Size +=  0.1f * (mstate.ScrollWheelValue - pmstate.ScrollWheelValue);
             
             if (mstate.LeftButton == ButtonState.Pressed)
@@ -110,7 +104,7 @@ namespace MSDF_Playground
             else if (kstate.IsKeyDown(Keys.Down)) valign = VerticalAlignment.Top;
             else valign = VerticalAlignment.Middle;
             
-            if (kstate.IsKeyDown(Keys.Space) && !pkstate.IsKeyDown(Keys.Space))
+            if ((kstate.IsKeyDown(Keys.Space) && !pkstate.IsKeyDown(Keys.Space)) || gameTime.TotalGameTime >= next)
             {
                 switch (fontIndex)
                 {
@@ -142,6 +136,12 @@ namespace MSDF_Playground
                 Font.Initialize(GraphicsDevice);
                 _ShaderFontBatch.Font = Font;
                 firstLetter = Font.GetGlyph(chars[0]);
+            }
+
+            if (gameTime.TotalGameTime >= next)
+            {
+                next = gameTime.TotalGameTime.Add(TimeSpan.FromMilliseconds(2000));
+
             }
 
             base.Update(gameTime);
