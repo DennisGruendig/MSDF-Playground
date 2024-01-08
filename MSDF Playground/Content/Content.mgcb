@@ -26,6 +26,14 @@
 /processorParam:DebugMode=Auto
 /build:MSDFShader.fx
 
+#begin TrueTypeFonts/Arial.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:TrueTypeFonts/Arial.ttf
+
 #begin TrueTypeFonts/Bermuda.TTF
 /importer:ShaderFontImporter
 /processor:ShaderFontProcessor
@@ -33,6 +41,30 @@
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
 /build:TrueTypeFonts/Bermuda.TTF
+
+#begin TrueTypeFonts/BitPotionExt.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:TrueTypeFonts/BitPotionExt.ttf
+
+#begin TrueTypeFonts/Brougham Bold.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:TrueTypeFonts/Brougham Bold.ttf
+
+#begin TrueTypeFonts/Brougham.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:TrueTypeFonts/Brougham.ttf
 
 #begin TrueTypeFonts/Connecticut.ttf
 /importer:ShaderFontImporter
@@ -42,6 +74,14 @@
 /processorParam:CharsetDefinition=
 /build:TrueTypeFonts/Connecticut.ttf
 
+#begin TrueTypeFonts/Gabriola.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:TrueTypeFonts/Gabriola.ttf
+
 #begin TrueTypeFonts/Germany.ttf
 /importer:ShaderFontImporter
 /processor:ShaderFontProcessor
@@ -49,6 +89,22 @@
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
 /build:TrueTypeFonts/Germany.ttf
+
+#begin TrueTypeFonts/Inkfree.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:TrueTypeFonts/Inkfree.ttf
+
+#begin TrueTypeFonts/Istanbul.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:TrueTypeFonts/Istanbul.ttf
 
 #begin TrueTypeFonts/KiwiSoda.ttf
 /importer:ShaderFontImporter
@@ -66,6 +122,14 @@
 /processorParam:CharsetDefinition=
 /build:TrueTypeFonts/NDSBIOS.TTF
 
+#begin TrueTypeFonts/rainyhearts.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:TrueTypeFonts/rainyhearts.ttf
+
 #begin TrueTypeFonts/SanDiego.TTF
 /importer:ShaderFontImporter
 /processor:ShaderFontProcessor
@@ -74,13 +138,21 @@
 /processorParam:CharsetDefinition=
 /build:TrueTypeFonts/SanDiego.TTF
 
-#begin TrueTypeFonts/Suissnord.ttf
+#begin TrueTypeFonts/SansSerifCollection.ttf
 /importer:ShaderFontImporter
 /processor:ShaderFontProcessor
 /processorParam:Resolution=128
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
-/build:TrueTypeFonts/Suissnord.ttf
+/build:TrueTypeFonts/SansSerifCollection.ttf
+
+#begin TrueTypeFonts/Sitka.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:TrueTypeFonts/Sitka.ttf
 
 #begin TrueTypeFonts/sylfaen.ttf
 /importer:ShaderFontImporter
@@ -89,4 +161,12 @@
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
 /build:TrueTypeFonts/sylfaen.ttf
+
+#begin TrueTypeFonts/Utah.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:TrueTypeFonts/Utah.ttf
 

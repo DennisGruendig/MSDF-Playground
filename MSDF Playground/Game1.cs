@@ -73,7 +73,7 @@ namespace MSDF_Playground
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             MSDFshader = Content.Load<Effect>("MSDFShader");
 
-            Font = Content.Load<ShaderFont>("TrueTypeFonts/Germany");
+            Font = Content.Load<ShaderFont>("TrueTypeFonts/BitPotionExt");
             Font.Initialize(GraphicsDevice);
 
             chars = (DEF_CHARSET + DEF_CHARSET).Substring(index, chars.Length).ToArray();
@@ -122,9 +122,9 @@ namespace MSDF_Playground
                         fontIndex++; break;
                     case 2:
                         Font = Content.Load<ShaderFont>("TrueTypeFonts/Connecticut");
-                        fontIndex++; fontIndex++; break;
+                        fontIndex++; break;
                     case 3:
-                        //Font = Content.Load<ShaderFont>("TrueTypeFonts/Suissnord");
+                        Font = Content.Load<ShaderFont>("TrueTypeFonts/Germany");
                         fontIndex++; break;
                     case 4:
                         Font = Content.Load<ShaderFont>("TrueTypeFonts/Bermuda");
@@ -136,7 +136,7 @@ namespace MSDF_Playground
                         Font = Content.Load<ShaderFont>("TrueTypeFonts/SanDiego");
                         fontIndex++; break;
                     case 7:
-                        Font = Content.Load<ShaderFont>("TrueTypeFonts/Germany");
+                        Font = Content.Load<ShaderFont>("TrueTypeFonts/BitPotionExt");
                         fontIndex = 0; break;
                 }
                 Font.Initialize(GraphicsDevice);
