@@ -1,0 +1,172 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:bin/$(Platform)
+/intermediateDir:obj/$(Platform)
+/platform:Windows
+/config:
+/profile:Reach
+/compress:False
+
+#-------------------------------- References --------------------------------#
+
+/reference:..\..\MSDF Font Library\bin\Debug\net6.0\MSDF Font Library.dll
+
+#---------------------------------- Content ---------------------------------#
+
+#begin ../../MSDF Playground Game Library/Content/FieldFontEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:../../MSDF Playground Game Library/Content/FieldFontEffect.fx;FieldFontEffect.fx
+
+#begin ../../MSDF Playground Game Library/Content/MSDFShader.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:../../MSDF Playground Game Library/Content/MSDFShader.fx;MSDFShader.fx
+
+#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Arial.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Arial.ttf;TrueTypeFonts/Arial.ttf
+
+#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Bermuda.TTF
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Bermuda.TTF;TrueTypeFonts/Bermuda.TTF
+
+#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/BitPotionExt.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/BitPotionExt.ttf;TrueTypeFonts/BitPotionExt.ttf
+
+#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Brougham Bold.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Brougham Bold.ttf;TrueTypeFonts/Brougham Bold.ttf
+
+#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Brougham.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Brougham.ttf;TrueTypeFonts/Brougham.ttf
+
+#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Connecticut.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Connecticut.ttf;TrueTypeFonts/Connecticut.ttf
+
+#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Gabriola.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Gabriola.ttf;TrueTypeFonts/Gabriola.ttf
+
+#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Germany.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Germany.ttf;TrueTypeFonts/Germany.ttf
+
+#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Inkfree.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Inkfree.ttf;TrueTypeFonts/Inkfree.ttf
+
+#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Istanbul.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Istanbul.ttf;TrueTypeFonts/Istanbul.ttf
+
+#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/KiwiSoda.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/KiwiSoda.ttf;TrueTypeFonts/KiwiSoda.ttf
+
+#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/NDSBIOS.TTF
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/NDSBIOS.TTF;TrueTypeFonts/NDSBIOS.TTF
+
+#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/rainyhearts.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/rainyhearts.ttf;TrueTypeFonts/rainyhearts.ttf
+
+#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/SanDiego.TTF
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/SanDiego.TTF;TrueTypeFonts/SanDiego.TTF
+
+#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/SansSerifCollection.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/SansSerifCollection.ttf;TrueTypeFonts/SansSerifCollection.ttf
+
+#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Sitka.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Sitka.ttf;TrueTypeFonts/Sitka.ttf
+
+#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/sylfaen.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/sylfaen.ttf;TrueTypeFonts/sylfaen.ttf
+
+#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Utah.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Utah.ttf;TrueTypeFonts/Utah.ttf
+

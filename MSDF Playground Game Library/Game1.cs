@@ -9,9 +9,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
-namespace MSDF_Playground
+namespace MSDF_Playground_Game_Library
 {
     public class Game1 : Game
     {
@@ -89,8 +90,8 @@ namespace MSDF_Playground
             pmstate = mstate;
             mstate = Mouse.GetState();
 
-            Size +=  0.1f * (mstate.ScrollWheelValue - pmstate.ScrollWheelValue);
-            
+            Size += 0.1f * (mstate.ScrollWheelValue - pmstate.ScrollWheelValue);
+
             if (mstate.LeftButton == ButtonState.Pressed)
             {
                 Position += (mstate.Position - pmstate.Position).ToVector2();
@@ -103,7 +104,7 @@ namespace MSDF_Playground
             if (kstate.IsKeyDown(Keys.Up)) valign = VerticalAlignment.Bottom;
             else if (kstate.IsKeyDown(Keys.Down)) valign = VerticalAlignment.Top;
             else valign = VerticalAlignment.Middle;
-            
+
             if ((kstate.IsKeyDown(Keys.Space) && !pkstate.IsKeyDown(Keys.Space)) || gameTime.TotalGameTime >= next)
             {
                 switch (fontIndex)
@@ -146,7 +147,7 @@ namespace MSDF_Playground
 
             base.Update(gameTime);
         }
-        
+
         protected override void Draw(GameTime gameTime)
         {
             if (_graphics.PreferredBackBufferWidth != Window.ClientBounds.Width
@@ -157,7 +158,7 @@ namespace MSDF_Playground
                 _graphics.PreferredBackBufferHeight = Window.ClientBounds.Height;
                 firstRender = false;
             }
-            
+
             GraphicsDevice.Clear(Color.LightGray);
 
             scrollOffset -= (float)gameTime.ElapsedGameTime.TotalSeconds * 150;
@@ -175,7 +176,7 @@ namespace MSDF_Playground
 
             string frameMessage = string.Empty;
             if (showSpan)
-                frameMessage = $"µs: {(spanlist.Select(x => x.TotalMicroseconds).Sum() / spanlist.Length).ToString("000.0")}";
+                frameMessage = $"µs: {(spanlist.Select(x => x.Milliseconds * 1000).Sum() / spanlist.Length).ToString("000.0")}";
             else
                 frameMessage = $"µs: {spanindex.ToString("000")} / {spanlist.Length.ToString("000")}";
 
@@ -194,7 +195,7 @@ namespace MSDF_Playground
 
             // Vertical
             _spriteBatch.Draw(pixelbl, new Rectangle((int)mid.X - 1, 0, 2, vp.Height), lineIntensity);
-            
+
             _spriteBatch.End();
 
             start = DateTime.Now;

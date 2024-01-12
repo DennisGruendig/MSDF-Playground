@@ -15,7 +15,7 @@ namespace MSDF_Font_Library.Content
                 FontFile = Path.GetFullPath(filename),
                 FontGenerator = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "msdfgen.exe"),
                 AtlasGenerator = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "msdf-atlas-gen.exe"),
-                TempFolder = Path.Combine(Directory.GetCurrentDirectory(), "Temp Content", "Shader Fonts", Path.GetFileNameWithoutExtension(filename))
+                TempFolder = Path.Combine(Directory.GetCurrentDirectory(), "Font Data", Path.GetFileNameWithoutExtension(filename))
             };
 
             if (!File.Exists(data.FontGenerator))
