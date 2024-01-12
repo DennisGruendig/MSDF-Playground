@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework.Content.Pipeline;
+﻿using Assimp;
+using Assimp.Configs;
+using Microsoft.Xna.Framework.Content.Pipeline;
 using MSDF_Font_Library.FontAtlas;
 using System;
 using System.ComponentModel;
@@ -26,6 +28,11 @@ namespace MSDF_Font_Library.Content
         [Description("String of all the chars, for which to create glyphs")]
         public virtual string CharsetDefinition { get; set; } = string.Empty;
 
+        [DisplayName("Keep Temporary Data")]
+        [Description("Prevents deletion of raw atlas data files")]
+        [DefaultValue(false)]
+        public virtual bool KeepTemp { get; set; } = false;
+
         private const string DEF_CHARSET = "ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜabcdefghijklmnopqrstuvwxyzäöü1234567890/*-+,.!?ß´`'°^_:;²³{[]}§$%&()©€@=<>|#~ \\\"\\\\µ";
         private ImportData _ImportData;
 
@@ -46,6 +53,9 @@ namespace MSDF_Font_Library.Content
                 throw new InvalidOperationException("Could not find Atlas.bmp");
 
             byte[] bitmap = File.ReadAllBytes(_ImportData.Bitmap);
+
+            if (!KeepTemp)
+                Directory.Delete(_ImportData.TempFolder, true);
 
             return new ShaderFont(_ImportData.Name, atlas, bitmap);
         }

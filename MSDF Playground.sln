@@ -7,13 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSDF Playground GL", "MSDF 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSDF Font Library", "MSDF Font Library\MSDF Font Library.csproj", "{882FADF3-761E-4BA2-815A-DD84C4B1981A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tester", "Tester\Tester.csproj", "{46EEB6E2-D4AB-44D4-B038-83E3B822B939}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSDF Playground DX", "MSDF Playground DX\MSDF Playground DX.csproj", "{42B9164A-08AF-4397-9BCD-E2BC8F2BD47F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSDF Playground Game Library", "MSDF Playground Game Library\MSDF Playground Game Library.csproj", "{5F048701-3C84-4D90-AFA2-F71CA940546A}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MSDF Playground Shared Library", "MSDF Playground Shared Library\MSDF Playground Shared Library.shproj", "{A0CDBD0E-3A41-42B7-9425-A838BC2C7383}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSDF Playground Game Library", "MSDF Playground Game Library\MSDF Playground Game Library.csproj", "{5F048701-3C84-4D90-AFA2-F71CA940546A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,18 +45,6 @@ Global
 		{882FADF3-761E-4BA2-815A-DD84C4B1981A}.Release|x64.Build.0 = Release|Any CPU
 		{882FADF3-761E-4BA2-815A-DD84C4B1981A}.Release|x86.ActiveCfg = Release|Any CPU
 		{882FADF3-761E-4BA2-815A-DD84C4B1981A}.Release|x86.Build.0 = Release|Any CPU
-		{46EEB6E2-D4AB-44D4-B038-83E3B822B939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46EEB6E2-D4AB-44D4-B038-83E3B822B939}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46EEB6E2-D4AB-44D4-B038-83E3B822B939}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{46EEB6E2-D4AB-44D4-B038-83E3B822B939}.Debug|x64.Build.0 = Debug|Any CPU
-		{46EEB6E2-D4AB-44D4-B038-83E3B822B939}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{46EEB6E2-D4AB-44D4-B038-83E3B822B939}.Debug|x86.Build.0 = Debug|Any CPU
-		{46EEB6E2-D4AB-44D4-B038-83E3B822B939}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{46EEB6E2-D4AB-44D4-B038-83E3B822B939}.Release|Any CPU.Build.0 = Release|Any CPU
-		{46EEB6E2-D4AB-44D4-B038-83E3B822B939}.Release|x64.ActiveCfg = Release|Any CPU
-		{46EEB6E2-D4AB-44D4-B038-83E3B822B939}.Release|x64.Build.0 = Release|Any CPU
-		{46EEB6E2-D4AB-44D4-B038-83E3B822B939}.Release|x86.ActiveCfg = Release|Any CPU
-		{46EEB6E2-D4AB-44D4-B038-83E3B822B939}.Release|x86.Build.0 = Release|Any CPU
 		{42B9164A-08AF-4397-9BCD-E2BC8F2BD47F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{42B9164A-08AF-4397-9BCD-E2BC8F2BD47F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42B9164A-08AF-4397-9BCD-E2BC8F2BD47F}.Debug|x64.ActiveCfg = Debug|Any CPU
