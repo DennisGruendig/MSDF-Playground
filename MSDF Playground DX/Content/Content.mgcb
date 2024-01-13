@@ -182,3 +182,12 @@
 /processorParam:KeepTemp=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Utah.ttf;TrueTypeFonts/Utah.ttf
 
+#begin ../../MSDF Playground Game Library/Font Downloads/paperkind/Paperkind.otf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=True
+/build:../../MSDF Playground Game Library/Font Downloads/paperkind/Paperkind.otf;TrueTypeFonts/Paperkind.otf
+

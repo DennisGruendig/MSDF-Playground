@@ -126,7 +126,7 @@ namespace MSDF_Playground_Game_Library
 
             if ((kstate.IsKeyDown(Keys.Space) && !pkstate.IsKeyDown(Keys.Space)))// || gameTime.TotalGameTime >= next)
             {
-                fontIndex = fontIndex < 9 ? fontIndex + 1 : 0;
+                fontIndex = fontIndex < 10 ? fontIndex + 1 : 0;
                 switch (fontIndex)
                 {
                     case 0: FontName = "Arial"; break;
@@ -138,7 +138,8 @@ namespace MSDF_Playground_Game_Library
                     case 6: FontName = "Sylfaen"; break;
                     case 7: FontName = "SanDiego"; break;
                     case 8: FontName = "Inkfree"; break;
-                    case 9: FontName = "BitPotionExt"; break;
+                    case 9: FontName = "Paperkind"; break;
+                    case 10: FontName = "BitPotionExt"; break;
                 }
 
                 Font = Content.Load<ShaderFont>($"TrueTypeFonts/{FontName}");

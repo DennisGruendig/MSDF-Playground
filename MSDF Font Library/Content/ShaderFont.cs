@@ -35,7 +35,7 @@ namespace MSDF_Font_Library.Content
 
         public ShaderFont(string name, JsonRoot json, byte[] bitmap)
         {
-            _Fallback = '?';
+            _Fallback = '';
             _Name = name;
             _AtlasBitmap = bitmap;
             _DistanceRange = json.Atlas.DistanceRange;

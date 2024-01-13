@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace MSDF_Font_Library.Content
 {
-    [ContentImporter(".ttf", DisplayName = "Shader Font Importer - MSDF Font Library", DefaultProcessor = "ShaderFontProcessor")]
+    [ContentImporter(".ttf", ".otf", DisplayName = "Shader Font Importer - MSDF Font Library", DefaultProcessor = "ShaderFontProcessor")]
     public class ShaderFontImporter : ContentImporter<ImportData>
     {
         public override ImportData Import(string filename, ContentImporterContext context)
