@@ -14,12 +14,6 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin ../../MSDF Playground Game Library/Content/FieldFontEffect.fx
-/importer:EffectImporter
-/processor:EffectProcessor
-/processorParam:DebugMode=Auto
-/build:../../MSDF Playground Game Library/Content/FieldFontEffect.fx;FieldFontEffect.fx
-
 #begin ../../MSDF Playground Game Library/Content/MSDFShader.fx
 /importer:EffectImporter
 /processor:EffectProcessor

@@ -21,10 +21,10 @@ struct VertexShaderOutput
 	float2 TextureCoordinates : TEXCOORD0;
 };
 
-//based of Chlumsky's basic GLSL shader.
+// Based of Chlumsky's basic GLSL shader.
 
-//Chlumsky's MSDF generator repository
-//https://github.com/Chlumsky/msdfgen#using-a-multi-channel-distance-field
+// Chlumsky's MSDF generator repository
+// https://github.com/Chlumsky/msdfgen#using-a-multi-channel-distance-field
 
 float  pxRange;
 float2 textureSize;
