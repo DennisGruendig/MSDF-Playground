@@ -214,7 +214,7 @@ namespace MSDF_Playground_Game_Library
             start = DateTime.Now;
 
             _ShaderFontBatch.Begin(Size);
-            _ShaderFontBatch.DrawString($"Font Name: {FontName} - {frameMessage} - Scale: {Size.ToString("0.000")}", new Vector2(5, (int)(5 * uiScale.Y)), uiScale, HorizontalAlignment.Left, VerticalAlignment.Top);
+            _ShaderFontBatch.DrawString($"Font Name: {FontName} - {frameMessage}", new Vector2(5, (int)(5 * uiScale.Y)), uiScale, HorizontalAlignment.Left, VerticalAlignment.Top);
             _ShaderFontBatch.DrawString($"Scale: {Size.ToString("0.000")}", new Vector2(5, (int)(5 + Font.ActualLineHeight * uiScale.Y)), uiScale, HorizontalAlignment.Left, VerticalAlignment.Top);
             _ShaderFontBatch.DrawString($"{halign} / {valign}", new Vector2(_graphics.PreferredBackBufferWidth * 0.5f + (int)Position.X, _graphics.PreferredBackBufferHeight * 0.5f + (int)Position.Y), new Vector2(Size), halign, valign);
             _ShaderFontBatch.End();

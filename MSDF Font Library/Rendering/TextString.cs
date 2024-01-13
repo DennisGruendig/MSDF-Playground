@@ -58,8 +58,8 @@ namespace MSDF_Font_Library.Rendering
 
                 _drawCallBuffer[i].Scale = _scale;
                 _drawCallBuffer[i].Position = new Vector2(
-                    (int)(_position.X + cursorTravel + _glyphs[i].CursorBounds.X),
-                    (int)(_position.Y + _glyphs[i].CursorBounds.Y * _scale.Y));
+                    (_position.X + cursorTravel + _glyphs[i].CursorBounds.X),
+                    (_position.Y + _glyphs[i].CursorBounds.Y * _scale.Y));
 
                 cursorTravel += advance;
             }
@@ -83,8 +83,8 @@ namespace MSDF_Font_Library.Rendering
             for (int i = 0; i < _drawCallBuffer.Length; i++)
             {
                 _drawCallBuffer[i].Position = new Vector2(
-                    (int)(_drawCallBuffer[i].Position.X + offset.X),
-                    (int)(_drawCallBuffer[i].Position.Y + offset.Y));
+                    (_drawCallBuffer[i].Position.X + offset.X),
+                    (_drawCallBuffer[i].Position.Y + offset.Y));
             }
         }
 

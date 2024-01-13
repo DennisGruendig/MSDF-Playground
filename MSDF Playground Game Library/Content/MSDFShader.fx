@@ -11,7 +11,7 @@ Texture2D SpriteTexture;
 
 sampler2D SpriteTextureSampler = sampler_state
 {
-	Texture = <SpriteTexture>;
+    Texture = <SpriteTexture>;
 };
 
 struct VertexShaderOutput
@@ -21,14 +21,8 @@ struct VertexShaderOutput
 	float2 TextureCoordinates : TEXCOORD0;
 };
 
-// Based of Chlumsky's basic GLSL shader.
-
-// Chlumsky's MSDF generator repository
-// https://github.com/Chlumsky/msdfgen#using-a-multi-channel-distance-field
-
 float  pxRange;
 float2 textureSize;
-float4 bgColor;
 float4 fgColor;
 
 float median(float r, float g, float b) {
@@ -38,12 +32,13 @@ float median(float r, float g, float b) {
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
     float2 coord = input.TextureCoordinates;
-    float2 msdfUnit = pxRange / textureSize;
-    float3 samp = (tex2D(SpriteTextureSampler, coord) * input.Color).rgb;
-	float sigDist = median(samp.r, samp.g, samp.b) - 0.5;
-    sigDist *= dot(msdfUnit, 0.5 / fwidth(coord));
-    float opacity = clamp(sigDist + 0.5, 0, 1);
-	return lerp(bgColor, fgColor, opacity);
+    float2 unitRange = pxRange / textureSize;
+    float2 screenTexSize = 1.0 / fwidth(coord);
+    float3 msd = tex2D(SpriteTextureSampler, coord).rgb;
+    float sd = median(msd.r, msd.g, msd.b);
+    float screenPxDistance = max(0.5 * dot(unitRange, screenTexSize), 1.0) * (sd - 0.5);
+    float opacity = clamp(screenPxDistance + 0.5, 0.0, 1.0);
+    return lerp(float4(0, 0, 0, 0), fgColor, opacity);
 }
 
 technique SpriteDrawing
