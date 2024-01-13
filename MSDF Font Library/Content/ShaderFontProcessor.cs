@@ -33,7 +33,7 @@ namespace MSDF_Font_Library.Content
         [DefaultValue(false)]
         public virtual bool KeepTemp { get; set; } = false;
 
-        private const string DEF_CHARSET = "ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜabcdefghijklmnopqrstuvwxyzäöü1234567890/*-+,.!?ß´`'°^_:;²³{[]}§$%&()©€@=<>|#~ \\\"\\\\µ";
+        private const string DEF_CHARSET = "ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜabcdefghijklmnopqrstuvwxyzäöü1234567890/*-+,.!?ß´`'°^_:;²³{[]}§$%&()©€@=<>|#~ \\\"\\\\µ";
         private ImportData _ImportData;
 
         public override ShaderFont Process(ImportData input, ContentProcessorContext context)
