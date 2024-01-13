@@ -31,7 +31,7 @@ namespace MSDF_Font_Library.Rendering
             _BeginCalled = false;
             Font = font;
             ForegroundColor = foregroundColor ?? Color.Black;
-            BackgroundColor = backgroundColor ?? new Color(0, 0, 0, .2f);
+            BackgroundColor = backgroundColor ?? Color.Transparent;
         }
 
         public void Begin()

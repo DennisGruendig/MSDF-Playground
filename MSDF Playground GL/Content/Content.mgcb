@@ -48,7 +48,7 @@
 /importer:ShaderFontImporter
 /processor:ShaderFontProcessor
 /processorParam:Resolution=128
-/processorParam:DistanceRange=2
+/processorParam:DistanceRange=0
 /processorParam:CharsetDefinition=
 /processorParam:KeepTemp=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/BitPotionExt.ttf;TrueTypeFonts/BitPotionExt.ttf
@@ -120,7 +120,7 @@
 /importer:ShaderFontImporter
 /processor:ShaderFontProcessor
 /processorParam:Resolution=128
-/processorParam:DistanceRange=2
+/processorParam:DistanceRange=0
 /processorParam:CharsetDefinition=
 /processorParam:KeepTemp=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/KiwiSoda.ttf;TrueTypeFonts/KiwiSoda.ttf
@@ -129,7 +129,7 @@
 /importer:ShaderFontImporter
 /processor:ShaderFontProcessor
 /processorParam:Resolution=128
-/processorParam:DistanceRange=2
+/processorParam:DistanceRange=0
 /processorParam:CharsetDefinition=
 /processorParam:KeepTemp=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/NDSBIOS.TTF;TrueTypeFonts/NDSBIOS.TTF

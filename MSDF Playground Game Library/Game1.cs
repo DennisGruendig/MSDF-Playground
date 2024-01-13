@@ -124,27 +124,21 @@ namespace MSDF_Playground_Game_Library
                 else if (valign == VerticalAlignment.Middle)
                     valign = VerticalAlignment.Top;
 
-            //if (kstate.IsKeyDown(Keys.Left)) halign = HorizontalAlignment.Right;
-            //else if (kstate.IsKeyDown(Keys.Right)) halign = HorizontalAlignment.Left;
-            //else halign = HorizontalAlignment.Center;
-
-            //if (kstate.IsKeyDown(Keys.Up)) valign = VerticalAlignment.Bottom;
-            //else if (kstate.IsKeyDown(Keys.Down)) valign = VerticalAlignment.Top;
-            //else valign = VerticalAlignment.Middle;
-
             if ((kstate.IsKeyDown(Keys.Space) && !pkstate.IsKeyDown(Keys.Space)))// || gameTime.TotalGameTime >= next)
             {
-                fontIndex = fontIndex < 7 ? fontIndex + 1 : 0;
+                fontIndex = fontIndex < 9 ? fontIndex + 1 : 0;
                 switch (fontIndex)
                 {
-                    case 0: FontName = "NDSBIOS"; break;
-                    case 1: FontName = "KiwiSoda"; break;
-                    case 2: FontName = "Connecticut"; break;
-                    case 3: FontName = "Germany"; break;
-                    case 4: FontName = "Bermuda"; break;
-                    case 5: FontName = "Sylfaen"; break;
-                    case 6: FontName = "SanDiego"; break;
-                    case 7: FontName = "BitPotionExt"; break;
+                    case 0: FontName = "Arial"; break;
+                    case 1: FontName = "NDSBIOS"; break;
+                    case 2: FontName = "KiwiSoda"; break;
+                    case 3: FontName = "Connecticut"; break;
+                    case 4: FontName = "Germany"; break;
+                    case 5: FontName = "Bermuda"; break;
+                    case 6: FontName = "Sylfaen"; break;
+                    case 7: FontName = "SanDiego"; break;
+                    case 8: FontName = "Inkfree"; break;
+                    case 9: FontName = "BitPotionExt"; break;
                 }
 
                 Font = Content.Load<ShaderFont>($"TrueTypeFonts/{FontName}");
@@ -235,14 +229,8 @@ namespace MSDF_Playground_Game_Library
             start = DateTime.Now;
 
             _ShaderFontBatch.Begin();
-            _ShaderFontBatch.DrawString($"Font Name: {FontName} -", new Vector2(_graphics.PreferredBackBufferWidth * 0.5f, 5), vAlign: VerticalAlignment.Top, hAlign: HorizontalAlignment.Center);
-            _ShaderFontBatch.DrawString($"Font Name: {FontName} - {frameMessage}", new Vector2(_graphics.PreferredBackBufferWidth * 0.5f, _graphics.PreferredBackBufferHeight * 0.5f), vAlign: valign, hAlign: halign);
-
-            //_ShaderFontBatch.DrawString($"Font Name: {FontName} - {frameMessage}", new Vector2(_graphics.PreferredBackBufferWidth * 0.5f, _graphics.PreferredBackBufferHeight * 0.5f), vAlign: VerticalAlignment.Top, hAlign: halign);
-            //_ShaderFontBatch.DrawString($"Font Name: {FontName} - {frameMessage}", new Vector2(_graphics.PreferredBackBufferWidth * 0.5f, _graphics.PreferredBackBufferHeight * 0.5f), vAlign: VerticalAlignment.Middle, hAlign: halign);
-            //_ShaderFontBatch.DrawString($"Font Name: {FontName} - {frameMessage}", new Vector2(_graphics.PreferredBackBufferWidth * 0.5f, _graphics.PreferredBackBufferHeight * 0.5f), vAlign: VerticalAlignment.Bottom, hAlign: halign);
-
-            //_ShaderFontBatch.DrawString(new string(chars), new Vector2(0 + scrollOffset, _graphics.PreferredBackBufferHeight - lineOffset));
+            _ShaderFontBatch.DrawString($"Font Name: {FontName} - {frameMessage}", new Vector2(5, 5), vAlign: VerticalAlignment.Top, hAlign: HorizontalAlignment.Left);
+            _ShaderFontBatch.DrawString($"{halign} / {valign}", new Vector2(_graphics.PreferredBackBufferWidth * 0.5f, _graphics.PreferredBackBufferHeight * 0.5f), vAlign: valign, hAlign: halign);
             _ShaderFontBatch.End();
 
             spanlist[spanindex++] = DateTime.Now - start;
