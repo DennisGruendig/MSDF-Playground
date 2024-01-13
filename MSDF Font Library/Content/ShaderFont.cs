@@ -19,15 +19,15 @@ namespace MSDF_Font_Library.Content
         [ContentSerializer] private readonly int _FontSize;
         [ContentSerializer] private readonly int _AtlasWidth;
         [ContentSerializer] private readonly int _AtlasHeight;
-        [ContentSerializer] private readonly float _Height;
-        [ContentSerializer] private readonly float _LineHeight;
-        [ContentSerializer] private readonly float _Ascender;
-        [ContentSerializer] private readonly float _Descender;
-        [ContentSerializer] private readonly float _UnderlineY;
-        [ContentSerializer] private readonly float _UnderlineThickness;
-        [ContentSerializer] private readonly float _ActualHeight;
-        [ContentSerializer] private readonly float _ActualBaseLine;
-        [ContentSerializer] private readonly float _ActualLineHeight;
+        [ContentSerializer] private readonly double _Height;
+        [ContentSerializer] private readonly double _LineHeight;
+        [ContentSerializer] private readonly double _Ascender;
+        [ContentSerializer] private readonly double _Descender;
+        [ContentSerializer] private readonly double _UnderlineY;
+        [ContentSerializer] private readonly double _UnderlineThickness;
+        [ContentSerializer] private readonly double _ActualHeight;
+        [ContentSerializer] private readonly double _ActualBaseLine;
+        [ContentSerializer] private readonly double _ActualLineHeight;
 
         [ContentSerializer] private Texture2D _AtlasTexture;
 
@@ -42,16 +42,16 @@ namespace MSDF_Font_Library.Content
             _FontSize = json.Atlas.Size;
             _AtlasWidth = json.Atlas.Width;
             _AtlasHeight = json.Atlas.Height;
-            _Height = MathF.Abs((float)json.Metrics.Ascender) + MathF.Abs((float)json.Metrics.Descender);
-            _LineHeight = (float)json.Metrics.LineHeight;
-            _Ascender = (float)json.Metrics.Ascender;
-            _Descender = (float)json.Metrics.Descender;
-            _UnderlineY = (float)json.Metrics.UnderlineY;
-            _UnderlineThickness = (float)json.Metrics.UnderlineThickness;
+            _Height = Math.Abs(json.Metrics.Ascender) + Math.Abs(json.Metrics.Descender);
+            _LineHeight = json.Metrics.LineHeight;
+            _Ascender = json.Metrics.Ascender;
+            _Descender = json.Metrics.Descender;
+            _UnderlineY = json.Metrics.UnderlineY;
+            _UnderlineThickness = json.Metrics.UnderlineThickness;
             
-            _ActualHeight = json.Atlas.Size * (MathF.Abs((float)json.Metrics.Ascender) + MathF.Abs((float)json.Metrics.Descender));
-            _ActualBaseLine = (float)(json.Atlas.Size * json.Metrics.Ascender);
-            _ActualLineHeight = (float)(json.Atlas.Size * json.Metrics.LineHeight);
+            _ActualHeight = json.Atlas.Size * (Math.Abs(json.Metrics.Ascender) + Math.Abs(json.Metrics.Descender));
+            _ActualBaseLine = json.Atlas.Size * json.Metrics.Ascender;
+            _ActualLineHeight = json.Atlas.Size * json.Metrics.LineHeight;
             
             if (json.IgnoreKerning)
                 json.Kerning.Clear();
@@ -65,18 +65,18 @@ namespace MSDF_Font_Library.Content
         public string Name => _Name;
         public Texture2D AtlasTexture => _AtlasTexture;
         public int DistanceRange => _DistanceRange;
-        public float FontSize => _FontSize;
+        public double FontSize => _FontSize;
         public int AtlasWidth => _AtlasWidth;
         public int AtlasHeight => _AtlasHeight;
-        public float Height => _Height;
-        public float LineHeight => _LineHeight;
-        public float Ascender => _Ascender;
-        public float Descender => _Descender;
-        public float UnderlineY => _UnderlineY;
-        public float UnderlineThickness => _UnderlineThickness;
-        public float ActualHeight => _ActualHeight;
-        public float ActualBaseLine => _ActualBaseLine;
-        public float ActualLineHeight => _ActualLineHeight;
+        public double Height => _Height;
+        public double LineHeight => _LineHeight;
+        public double Ascender => _Ascender;
+        public double Descender => _Descender;
+        public double UnderlineY => _UnderlineY;
+        public double UnderlineThickness => _UnderlineThickness;
+        public double ActualHeight => _ActualHeight;
+        public double ActualBaseLine => _ActualBaseLine;
+        public double ActualLineHeight => _ActualLineHeight;
 
         public void Initialize(GraphicsDevice graphicsDevice)
         {

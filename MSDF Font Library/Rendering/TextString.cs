@@ -44,10 +44,10 @@ namespace MSDF_Font_Library.Rendering
 
         private void UpdateDrawCallBuffer()
         {
-            float cursorTravel = 0;
+            double cursorTravel = 0;
             bool isLast;
             char? nextChar;
-            float advance;
+            double advance;
             Vector2 offset = Vector2.Zero;
 
             for (int i = 0; i < _glyphs.Length; i++)
@@ -58,13 +58,13 @@ namespace MSDF_Font_Library.Rendering
 
                 _drawCallBuffer[i].Scale = _scale;
                 _drawCallBuffer[i].Position = new Vector2(
-                    (_position.X + cursorTravel + _glyphs[i].CursorBounds.X),
-                    (_position.Y + _glyphs[i].CursorBounds.Y * _scale.Y));
+                    (float)(_position.X + cursorTravel + _glyphs[i].CursorBounds.X),
+                    (float)(_position.Y + _glyphs[i].CursorBounds.Y * _scale.Y));
 
                 cursorTravel += advance;
             }
 
-            _size = new Vector2(cursorTravel, _font.ActualHeight * _scale.Y);
+            _size = new Vector2((float)cursorTravel, (float)_font.ActualHeight * _scale.Y);
 
             switch (_horiAlignment)
             {
@@ -76,15 +76,15 @@ namespace MSDF_Font_Library.Rendering
             {
                 case VerticalAlignment.Top: break;
                 case VerticalAlignment.Middle: offset.Y -= _size.Y * 0.5f; break;
-                case VerticalAlignment.Base: offset.Y -= _scale.Y * _font.ActualBaseLine; break;
+                case VerticalAlignment.Base: offset.Y -= _scale.Y * (float)_font.ActualBaseLine; break;
                 case VerticalAlignment.Bottom: offset.Y -= _size.Y; break;
             }
 
             for (int i = 0; i < _drawCallBuffer.Length; i++)
             {
                 _drawCallBuffer[i].Position = new Vector2(
-                    (_drawCallBuffer[i].Position.X + offset.X),
-                    (_drawCallBuffer[i].Position.Y + offset.Y));
+                    _drawCallBuffer[i].Position.X + offset.X,
+                    _drawCallBuffer[i].Position.Y + offset.Y);
             }
         }
 

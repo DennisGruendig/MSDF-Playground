@@ -174,7 +174,7 @@ namespace MSDF_Playground_Game_Library
             else
                 frameMessage = $"µs: {spanindex.ToString("000")} / {spanlist.Length.ToString("000")}";
 
-            float lineOffset = Font.ActualLineHeight;
+            double lineOffset = Font.ActualLineHeight;
 
             _spriteBatch.Begin();
 
@@ -204,7 +204,7 @@ namespace MSDF_Playground_Game_Library
             // Font positions
             _spriteBatch.Draw(pixelrd, new Rectangle(0, (int)(4 * uiScale.Y), vp.Width, 2), lineIntensity2);
             _spriteBatch.Draw(pixelgr, new Rectangle(0, (int)((4 * uiScale.Y) + (Font.Ascender * Font.FontSize) * uiScale.Y), vp.Width, 2), lineIntensity2);
-            _spriteBatch.Draw(pixelbu, new Rectangle(0, (int)((4 * uiScale.Y) + (Font.Ascender * Font.FontSize + MathF.Abs(Font.Descender) * Font.FontSize) * uiScale.Y), vp.Width, 2), lineIntensity2);
+            _spriteBatch.Draw(pixelbu, new Rectangle(0, (int)((4 * uiScale.Y) + (Font.Ascender * Font.FontSize + Math.Abs(Font.Descender) * Font.FontSize) * uiScale.Y), vp.Width, 2), lineIntensity2);
             _spriteBatch.Draw(pixelye, new Rectangle(0, (int)((4 * uiScale.Y) + (Font.LineHeight * Font.FontSize) * uiScale.Y), vp.Width, 2), lineIntensity2);
             _spriteBatch.Draw(pixelma, new Rectangle(0, (int)((4 * uiScale.Y) + (Font.Height * Font.FontSize * 0.5f) * uiScale.Y), vp.Width, 2), lineIntensity2);
             _spriteBatch.Draw(pixelcy, new Rectangle(0, (int)((4 * uiScale.Y) + (Font.Height * Font.FontSize) * uiScale.Y), vp.Width, 2), lineIntensity2);

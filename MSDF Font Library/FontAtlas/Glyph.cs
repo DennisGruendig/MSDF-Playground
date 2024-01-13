@@ -1,24 +1,20 @@
 ﻿using CppNet;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
 using MSDF_Font_Library.Content;
 using MSDF_Font_Library.Datatypes;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MSDF_Font_Library.FontAtlas
 {
     public class Glyph
     {
         [ContentSerializer] private readonly char _Character;
-        [ContentSerializer] private readonly float _Advance;
-        [ContentSerializer] private readonly Dictionary<char, float> _KerningAdvances;
+        [ContentSerializer] private readonly double _Advance;
+        [ContentSerializer] private readonly Dictionary<char, double> _KerningAdvances;
         [ContentSerializer] private readonly Rectangle _AtlasSource;
-        [ContentSerializer] private readonly RectangleF _CursorBounds;
+        [ContentSerializer] private readonly RectangleD _CursorBounds;
 
         public Glyph() { }
 
@@ -29,7 +25,7 @@ namespace MSDF_Font_Library.FontAtlas
 
             _KerningAdvances = kernings
                 .Where(x => x.Unicode1 == glyph.Unicode)
-                .ToDictionary(x => (char)x.Unicode2, x => (float)(x.Advance * font.FontSize));
+                .ToDictionary(x => (char)x.Unicode2, x => x.Advance * font.FontSize);
 
             _AtlasSource = new Rectangle(
                 (int)(glyph.AtlasBounds.Left + 0.5),
@@ -37,27 +33,27 @@ namespace MSDF_Font_Library.FontAtlas
                 (int)(glyph.AtlasBounds.Right - glyph.AtlasBounds.Left - 0.5),
                 (int)(glyph.AtlasBounds.Top - glyph.AtlasBounds.Bottom - 0.5));
 
-            _CursorBounds = new RectangleF(
-                (float)(glyph.PlaneBounds.Left * font.FontSize),
-                (float)(font.Ascender * font.FontSize - glyph.PlaneBounds.Top * font.FontSize),
-                (float)(glyph.PlaneBounds.Right * font.FontSize),
-                (float)(-glyph.PlaneBounds.Bottom * font.FontSize));
+            _CursorBounds = new RectangleD(
+                glyph.PlaneBounds.Left * font.FontSize,
+                font.Ascender * font.FontSize - glyph.PlaneBounds.Top * font.FontSize,
+                glyph.PlaneBounds.Right * font.FontSize,
+                -glyph.PlaneBounds.Bottom * font.FontSize);
         }
 
         public char Character { get => _Character; }
         public Rectangle AtlasSource { get => _AtlasSource; }
-        public RectangleF CursorBounds { get => _CursorBounds; }
+        public RectangleD CursorBounds { get => _CursorBounds; }
 
-        public float GetAdvance()
+        public double GetAdvance()
         {
             return _Advance;
         }
-        public float GetAdvance(char? nextChar)
+        public double GetAdvance(char? nextChar)
         {
             if (nextChar is null || _KerningAdvances is null)
                 return _Advance;
 
-            if (_KerningAdvances.TryGetValue(nextChar.Value, out float advance))
+            if (_KerningAdvances.TryGetValue(nextChar.Value, out double advance))
                 return _Advance + advance;
 
             else
