@@ -11,6 +11,7 @@ namespace MSDF_Font_Library.FontAtlas
         public JsonAtlas Atlas { get; set; }
         public JsonMetrics Metrics { get; set; }
         public List<JsonGlyph> Glyphs { get; set; }
+
         //public List<object> Kerning { get; set; }
 
         // ToDo Löschen

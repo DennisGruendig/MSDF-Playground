@@ -16,13 +16,12 @@ namespace MSDF_Playground_Game_Library
 {
     public class Game1 : Game
     {
-        private readonly List<MissingCharacterInfo> _MissingCharacters = MissingCharacters.CharacterList;
-
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private ShaderFontBatch _ShaderFontBatch;
         private Effect MSDFshader;
         private ShaderFont Font;
+        private string FontName = "BitPotionExt";
         private bool firstRender = true;
 
         private KeyboardState kstate;
@@ -31,7 +30,7 @@ namespace MSDF_Playground_Game_Library
         private MouseState pmstate;
 
         private TimeSpan next;
-        private int fontIndex;
+        private int fontIndex = -1;
 
         private float Size = 0;
         private Vector2 Position = new Vector2(0, 0);
@@ -47,7 +46,7 @@ namespace MSDF_Playground_Game_Library
         private int spanindex = 0;
         private bool showSpan = false;
 
-        private VerticalAlignment valign = VerticalAlignment.Middle;
+        private VerticalAlignment valign = VerticalAlignment.Base;
         private HorizontalAlignment halign = HorizontalAlignment.Center;
 
         public Game1()
@@ -74,7 +73,7 @@ namespace MSDF_Playground_Game_Library
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             MSDFshader = Content.Load<Effect>("MSDFShader");
 
-            Font = Content.Load<ShaderFont>("TrueTypeFonts/BitPotionExt");
+            Font = Content.Load<ShaderFont>($"TrueTypeFonts/{FontName}");
             Font.Initialize(GraphicsDevice);
 
             chars = (DEF_CHARSET + DEF_CHARSET).Substring(index, chars.Length).ToArray();
@@ -97,43 +96,58 @@ namespace MSDF_Playground_Game_Library
                 Position += (mstate.Position - pmstate.Position).ToVector2();
             }
 
-            if (kstate.IsKeyDown(Keys.Left)) halign = HorizontalAlignment.Right;
-            else if (kstate.IsKeyDown(Keys.Right)) halign = HorizontalAlignment.Left;
-            else halign = HorizontalAlignment.Center;
+            if (kstate.IsKeyDown(Keys.Left) && !pkstate.IsKeyDown(Keys.Left))
+                if (halign == HorizontalAlignment.Left)
+                    halign = HorizontalAlignment.Center;
+                else if (halign == HorizontalAlignment.Center)
+                    halign = HorizontalAlignment.Right;
 
-            if (kstate.IsKeyDown(Keys.Up)) valign = VerticalAlignment.Bottom;
-            else if (kstate.IsKeyDown(Keys.Down)) valign = VerticalAlignment.Top;
-            else valign = VerticalAlignment.Middle;
+            if (kstate.IsKeyDown(Keys.Right) && !pkstate.IsKeyDown(Keys.Right))
+                if (halign == HorizontalAlignment.Right)
+                    halign = HorizontalAlignment.Center;
+                else if (halign == HorizontalAlignment.Center)
+                    halign = HorizontalAlignment.Left;
 
-            if ((kstate.IsKeyDown(Keys.Space) && !pkstate.IsKeyDown(Keys.Space)) || gameTime.TotalGameTime >= next)
+            if (kstate.IsKeyDown(Keys.Up) && !pkstate.IsKeyDown(Keys.Up))
+                if (valign == VerticalAlignment.Top)
+                    valign = VerticalAlignment.Middle;
+                else if (valign == VerticalAlignment.Middle)
+                    valign = VerticalAlignment.Base;
+                else if (valign == VerticalAlignment.Base)
+                    valign = VerticalAlignment.Bottom;
+
+            if (kstate.IsKeyDown(Keys.Down) && !pkstate.IsKeyDown(Keys.Down))
+                if (valign == VerticalAlignment.Bottom)
+                    valign = VerticalAlignment.Base;
+                else if (valign == VerticalAlignment.Base)
+                    valign = VerticalAlignment.Middle;
+                else if (valign == VerticalAlignment.Middle)
+                    valign = VerticalAlignment.Top;
+
+            //if (kstate.IsKeyDown(Keys.Left)) halign = HorizontalAlignment.Right;
+            //else if (kstate.IsKeyDown(Keys.Right)) halign = HorizontalAlignment.Left;
+            //else halign = HorizontalAlignment.Center;
+
+            //if (kstate.IsKeyDown(Keys.Up)) valign = VerticalAlignment.Bottom;
+            //else if (kstate.IsKeyDown(Keys.Down)) valign = VerticalAlignment.Top;
+            //else valign = VerticalAlignment.Middle;
+
+            if ((kstate.IsKeyDown(Keys.Space) && !pkstate.IsKeyDown(Keys.Space)))// || gameTime.TotalGameTime >= next)
             {
+                fontIndex = fontIndex < 7 ? fontIndex + 1 : 0;
                 switch (fontIndex)
                 {
-                    case 0:
-                        Font = Content.Load<ShaderFont>("TrueTypeFonts/NDSBIOS");
-                        fontIndex++; break;
-                    case 1:
-                        Font = Content.Load<ShaderFont>("TrueTypeFonts/KiwiSoda");
-                        fontIndex++; break;
-                    case 2:
-                        Font = Content.Load<ShaderFont>("TrueTypeFonts/Connecticut");
-                        fontIndex++; break;
-                    case 3:
-                        Font = Content.Load<ShaderFont>("TrueTypeFonts/Germany");
-                        fontIndex++; break;
-                    case 4:
-                        Font = Content.Load<ShaderFont>("TrueTypeFonts/Bermuda");
-                        fontIndex++; break;
-                    case 5:
-                        Font = Content.Load<ShaderFont>("TrueTypeFonts/Sylfaen");
-                        fontIndex++; break;
-                    case 6:
-                        Font = Content.Load<ShaderFont>("TrueTypeFonts/SanDiego");
-                        fontIndex++; break;
-                    case 7:
-                        Font = Content.Load<ShaderFont>("TrueTypeFonts/BitPotionExt");
-                        fontIndex = 0; break;
+                    case 0: FontName = "NDSBIOS"; break;
+                    case 1: FontName = "KiwiSoda"; break;
+                    case 2: FontName = "Connecticut"; break;
+                    case 3: FontName = "Germany"; break;
+                    case 4: FontName = "Bermuda"; break;
+                    case 5: FontName = "Sylfaen"; break;
+                    case 6: FontName = "SanDiego"; break;
+                    case 7: FontName = "BitPotionExt"; break;
                 }
+
+                Font = Content.Load<ShaderFont>($"TrueTypeFonts/{FontName}");
                 Font.Initialize(GraphicsDevice);
                 _ShaderFontBatch.Font = Font;
                 firstLetter = Font.GetGlyph(chars[0]);
@@ -141,8 +155,7 @@ namespace MSDF_Playground_Game_Library
 
             if (gameTime.TotalGameTime >= next)
             {
-                next = gameTime.TotalGameTime.Add(TimeSpan.FromMilliseconds(2000));
-
+                next = gameTime.TotalGameTime.Add(TimeSpan.FromMilliseconds(5000));
             }
 
             base.Update(gameTime);
@@ -176,22 +189,43 @@ namespace MSDF_Playground_Game_Library
 
             string frameMessage = string.Empty;
             if (showSpan)
-                frameMessage = $"µs: {(spanlist.Select(x => x.Milliseconds * 1000).Sum() / spanlist.Length).ToString("000.0")}";
+                frameMessage = $"µs: {(spanlist.Select(x => x.TotalMicroseconds).Sum() / spanlist.Length).ToString("000.0")}";
             else
                 frameMessage = $"µs: {spanindex.ToString("000")} / {spanlist.Length.ToString("000")}";
 
-            float lineOffset = Font.LineOffset;
+            float lineOffset = Font.ActualLineHeight;
 
             _spriteBatch.Begin();
 
             var vp = GraphicsDevice.Viewport;
             var mid = new Vector2(vp.Width * 0.5f, vp.Height * 0.5f);
             var pixelbl = new Texture2D(GraphicsDevice, 1, 1);
+            var pixelrd = new Texture2D(GraphicsDevice, 1, 1);
+            var pixelgr = new Texture2D(GraphicsDevice, 1, 1);
+            var pixelbu = new Texture2D(GraphicsDevice, 1, 1);
+            var pixelye = new Texture2D(GraphicsDevice, 1, 1);
+            var pixelma = new Texture2D(GraphicsDevice, 1, 1);
+            var pixelcy = new Texture2D(GraphicsDevice, 1, 1);
             pixelbl.SetData(new Color[] { Color.Black });
+            pixelrd.SetData(new Color[] { Color.Red });
+            pixelgr.SetData(new Color[] { Color.Lime });
+            pixelbu.SetData(new Color[] { Color.Blue });
+            pixelye.SetData(new Color[] { Color.Yellow });
+            pixelma.SetData(new Color[] { Color.Magenta });
+            pixelcy.SetData(new Color[] { Color.Cyan });
             Color lineIntensity = new Color(1, 1, 1, 0.3f);
+            Color lineIntensity2 = new Color(1, 1, 1, 0.2f);
 
             // Horizontal
             _spriteBatch.Draw(pixelbl, new Rectangle(0, (int)mid.Y - 1, vp.Width, 2), lineIntensity);
+
+            _spriteBatch.Draw(pixelrd, new Rectangle(0, 4, vp.Width, 2), lineIntensity2);
+            _spriteBatch.Draw(pixelgr, new Rectangle(0, 4 + (int)(Font.Ascender * Font.FontSize), vp.Width, 2), lineIntensity2);
+            _spriteBatch.Draw(pixelbu, new Rectangle(0, 4 + (int)(Font.Ascender * Font.FontSize + MathF.Abs(Font.Descender) * Font.FontSize), vp.Width, 2), lineIntensity2);
+            _spriteBatch.Draw(pixelye, new Rectangle(0, 4 + (int)(Font.LineHeight * Font.FontSize), vp.Width, 2), lineIntensity2);
+
+            _spriteBatch.Draw(pixelma, new Rectangle(0, 4 + (int)(Font.Height * Font.FontSize * 0.5f), vp.Width, 2), lineIntensity2);
+            _spriteBatch.Draw(pixelcy, new Rectangle(0, 4 + (int)(Font.Height * Font.FontSize), vp.Width, 2), lineIntensity2);
 
             // Vertical
             _spriteBatch.Draw(pixelbl, new Rectangle((int)mid.X - 1, 0, 2, vp.Height), lineIntensity);
@@ -201,8 +235,14 @@ namespace MSDF_Playground_Game_Library
             start = DateTime.Now;
 
             _ShaderFontBatch.Begin();
-            _ShaderFontBatch.DrawString(frameMessage, new Vector2(_graphics.PreferredBackBufferWidth * 0.5f, _graphics.PreferredBackBufferHeight * 0.5f), vAlign: valign, hAlign: halign);
-            _ShaderFontBatch.DrawString(new string(chars), new Vector2(0 + scrollOffset, _graphics.PreferredBackBufferHeight - lineOffset));
+            _ShaderFontBatch.DrawString($"Font Name: {FontName} -", new Vector2(_graphics.PreferredBackBufferWidth * 0.5f, 5), vAlign: VerticalAlignment.Top, hAlign: HorizontalAlignment.Center);
+            _ShaderFontBatch.DrawString($"Font Name: {FontName} - {frameMessage}", new Vector2(_graphics.PreferredBackBufferWidth * 0.5f, _graphics.PreferredBackBufferHeight * 0.5f), vAlign: valign, hAlign: halign);
+
+            //_ShaderFontBatch.DrawString($"Font Name: {FontName} - {frameMessage}", new Vector2(_graphics.PreferredBackBufferWidth * 0.5f, _graphics.PreferredBackBufferHeight * 0.5f), vAlign: VerticalAlignment.Top, hAlign: halign);
+            //_ShaderFontBatch.DrawString($"Font Name: {FontName} - {frameMessage}", new Vector2(_graphics.PreferredBackBufferWidth * 0.5f, _graphics.PreferredBackBufferHeight * 0.5f), vAlign: VerticalAlignment.Middle, hAlign: halign);
+            //_ShaderFontBatch.DrawString($"Font Name: {FontName} - {frameMessage}", new Vector2(_graphics.PreferredBackBufferWidth * 0.5f, _graphics.PreferredBackBufferHeight * 0.5f), vAlign: VerticalAlignment.Bottom, hAlign: halign);
+
+            //_ShaderFontBatch.DrawString(new string(chars), new Vector2(0 + scrollOffset, _graphics.PreferredBackBufferHeight - lineOffset));
             _ShaderFontBatch.End();
 
             spanlist[spanindex++] = DateTime.Now - start;

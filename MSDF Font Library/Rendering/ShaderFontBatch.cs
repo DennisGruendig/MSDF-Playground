@@ -31,7 +31,7 @@ namespace MSDF_Font_Library.Rendering
             _BeginCalled = false;
             Font = font;
             ForegroundColor = foregroundColor ?? Color.Black;
-            BackgroundColor = backgroundColor ?? Color.Transparent;
+            BackgroundColor = backgroundColor ?? new Color(0, 0, 0, .2f);
         }
 
         public void Begin()
@@ -71,9 +71,10 @@ namespace MSDF_Font_Library.Rendering
             }
             switch (vAlign)
             {
+                case VerticalAlignment.Base: position.Y -= Font.ActualBaseLine; break;
                 case VerticalAlignment.Top: break;
-                case VerticalAlignment.Middle: position.Y -= Font.LineOffset * 0.5f; break;
-                case VerticalAlignment.Bottom: position.Y -= Font.LineOffset; break;
+                case VerticalAlignment.Middle: position.Y -= size.Y * 0.5f; break;
+                case VerticalAlignment.Bottom: position.Y -= size.Y; break;
             }
 
             for (int i = 0; i < text.Length; i++)
@@ -92,7 +93,7 @@ namespace MSDF_Font_Library.Rendering
 
         public Vector2 MeasureString(string text)
         {
-            Vector2 size = new Vector2(0, Font.LineOffset);
+            Vector2 size = new Vector2(0, Font.ActualHeight);
             float advance = 0;
 
             for (int i = 0; i < text.Length; i++)

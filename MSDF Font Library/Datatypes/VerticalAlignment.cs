@@ -8,6 +8,7 @@ namespace MSDF_Font_Library.Datatypes
 {
     public enum VerticalAlignment
     {
+        Base,
         Top,
         Middle,
         Bottom

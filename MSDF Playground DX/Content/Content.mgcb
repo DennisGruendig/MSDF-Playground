@@ -32,7 +32,7 @@
 /processorParam:Resolution=128
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
-/processorParam:KeepTemp=False
+/processorParam:KeepTemp=True
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Arial.ttf;TrueTypeFonts/Arial.ttf
 
 #begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Bermuda.TTF

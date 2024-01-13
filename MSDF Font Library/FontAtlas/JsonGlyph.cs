@@ -4,7 +4,7 @@
     {
         public int Unicode { get; set; }
         public double Advance { get; set; }
-        public JsonBounds PlaneBounds { get; set; }
-        public JsonBounds AtlasBounds { get; set; }
+        public JsonBounds PlaneBounds { get; set; } = new();
+        public JsonBounds AtlasBounds { get; set; } = new();
     }
 }
