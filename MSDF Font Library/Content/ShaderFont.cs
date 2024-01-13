@@ -48,11 +48,16 @@ namespace MSDF_Font_Library.Content
             _Descender = (float)json.Metrics.Descender;
             _UnderlineY = (float)json.Metrics.UnderlineY;
             _UnderlineThickness = (float)json.Metrics.UnderlineThickness;
+            
             _ActualHeight = json.Atlas.Size * (MathF.Abs((float)json.Metrics.Ascender) + MathF.Abs((float)json.Metrics.Descender));
             _ActualBaseLine = (float)(json.Atlas.Size * json.Metrics.Ascender);
             _ActualLineHeight = (float)(json.Atlas.Size * json.Metrics.LineHeight);
+            
+            if (json.IgnoreKerning)
+                json.Kerning.Clear();
+
             _Glyphs = json.Glyphs
-                .Select(x => new Glyph(this, x))
+                .Select(x => new Glyph(this, x, json.Kerning))
                 .OrderBy(x => x.Character)
                 .ToDictionary(x => x.Character, x => x);
         }
@@ -90,7 +95,7 @@ namespace MSDF_Font_Library.Content
                 return glyph;
             if (_Glyphs.TryGetValue(_Fallback, out Glyph glyphFallback))
                 return glyphFallback;
-            throw new InvalidOperationException($"Character '{character}' and fallback '{_Fallback}' both not found.");
+            return new Glyph();
         }
 
     }

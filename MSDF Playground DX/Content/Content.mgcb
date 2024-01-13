@@ -27,6 +27,7 @@
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
 /processorParam:KeepTemp=True
+/processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Arial.ttf;TrueTypeFonts/Arial.ttf
 
 #begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Bermuda.TTF
@@ -36,6 +37,7 @@
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
 /processorParam:KeepTemp=True
+/processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Bermuda.TTF;TrueTypeFonts/Bermuda.TTF
 
 #begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/BitPotionExt.ttf
@@ -45,6 +47,7 @@
 /processorParam:DistanceRange=1
 /processorParam:CharsetDefinition=
 /processorParam:KeepTemp=True
+/processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/BitPotionExt.ttf;TrueTypeFonts/BitPotionExt.ttf
 
 #begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Brougham Bold.ttf
@@ -53,7 +56,8 @@
 /processorParam:Resolution=128
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
-/processorParam:KeepTemp=False
+/processorParam:KeepTemp=True
+/processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Brougham Bold.ttf;TrueTypeFonts/Brougham Bold.ttf
 
 #begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Brougham.ttf
@@ -62,7 +66,8 @@
 /processorParam:Resolution=128
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
-/processorParam:KeepTemp=False
+/processorParam:KeepTemp=True
+/processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Brougham.ttf;TrueTypeFonts/Brougham.ttf
 
 #begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Connecticut.ttf
@@ -72,6 +77,7 @@
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
 /processorParam:KeepTemp=True
+/processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Connecticut.ttf;TrueTypeFonts/Connecticut.ttf
 
 #begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Gabriola.ttf
@@ -80,7 +86,8 @@
 /processorParam:Resolution=128
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
-/processorParam:KeepTemp=False
+/processorParam:KeepTemp=True
+/processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Gabriola.ttf;TrueTypeFonts/Gabriola.ttf
 
 #begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Germany.ttf
@@ -90,6 +97,7 @@
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
 /processorParam:KeepTemp=True
+/processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Germany.ttf;TrueTypeFonts/Germany.ttf
 
 #begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Inkfree.ttf
@@ -99,6 +107,7 @@
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
 /processorParam:KeepTemp=True
+/processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Inkfree.ttf;TrueTypeFonts/Inkfree.ttf
 
 #begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Istanbul.ttf
@@ -107,7 +116,8 @@
 /processorParam:Resolution=128
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
-/processorParam:KeepTemp=False
+/processorParam:KeepTemp=True
+/processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Istanbul.ttf;TrueTypeFonts/Istanbul.ttf
 
 #begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/KiwiSoda.ttf
@@ -117,6 +127,7 @@
 /processorParam:DistanceRange=1
 /processorParam:CharsetDefinition=
 /processorParam:KeepTemp=True
+/processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/KiwiSoda.ttf;TrueTypeFonts/KiwiSoda.ttf
 
 #begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/NDSBIOS.TTF
@@ -126,6 +137,7 @@
 /processorParam:DistanceRange=1
 /processorParam:CharsetDefinition=
 /processorParam:KeepTemp=True
+/processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/NDSBIOS.TTF;TrueTypeFonts/NDSBIOS.TTF
 
 #begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/rainyhearts.ttf
@@ -134,7 +146,8 @@
 /processorParam:Resolution=128
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
-/processorParam:KeepTemp=False
+/processorParam:KeepTemp=True
+/processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/rainyhearts.ttf;TrueTypeFonts/rainyhearts.ttf
 
 #begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/SanDiego.TTF
@@ -144,6 +157,7 @@
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
 /processorParam:KeepTemp=True
+/processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/SanDiego.TTF;TrueTypeFonts/SanDiego.TTF
 
 #begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/SansSerifCollection.ttf
@@ -152,7 +166,8 @@
 /processorParam:Resolution=128
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
-/processorParam:KeepTemp=False
+/processorParam:KeepTemp=True
+/processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/SansSerifCollection.ttf;TrueTypeFonts/SansSerifCollection.ttf
 
 #begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Sitka.ttf
@@ -161,7 +176,8 @@
 /processorParam:Resolution=128
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
-/processorParam:KeepTemp=False
+/processorParam:KeepTemp=True
+/processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Sitka.ttf;TrueTypeFonts/Sitka.ttf
 
 #begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/sylfaen.ttf
@@ -170,7 +186,8 @@
 /processorParam:Resolution=128
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
-/processorParam:KeepTemp=False
+/processorParam:KeepTemp=True
+/processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/sylfaen.ttf;TrueTypeFonts/sylfaen.ttf
 
 #begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Utah.ttf
@@ -179,7 +196,8 @@
 /processorParam:Resolution=128
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
-/processorParam:KeepTemp=False
+/processorParam:KeepTemp=True
+/processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Utah.ttf;TrueTypeFonts/Utah.ttf
 
 #begin ../../MSDF Playground Game Library/Font Downloads/paperkind/Paperkind.otf
@@ -189,5 +207,6 @@
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
 /processorParam:KeepTemp=True
+/processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Font Downloads/paperkind/Paperkind.otf;TrueTypeFonts/Paperkind.otf
 

@@ -1,6 +1,4 @@
-﻿using Microsoft.Xna.Framework.Content;
-
-namespace MSDF_Font_Library.FontAtlas
+﻿namespace MSDF_Font_Library.FontAtlas
 {
     public class JsonAtlas
     {

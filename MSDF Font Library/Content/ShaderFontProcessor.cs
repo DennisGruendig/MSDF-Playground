@@ -33,6 +33,11 @@ namespace MSDF_Font_Library.Content
         [DefaultValue(false)]
         public virtual bool KeepTemp { get; set; } = false;
 
+        [DisplayName("Ignore Kerning")]
+        [Description("Ignores kerning data obtained from the font file")]
+        [DefaultValue(false)]
+        public virtual bool IgnoreKerning { get; set; } = false;
+
         private const string DEF_CHARSET = "ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜabcdefghijklmnopqrstuvwxyzäöü1234567890/*-+,.!?ß´`'°^_:;²³{[]}§$%&()©€@=<>|#~ \\\"\\\\µ";
         private ImportData _ImportData;
 
@@ -86,6 +91,7 @@ namespace MSDF_Font_Library.Content
 
             string jsonString = File.ReadAllText(_ImportData.Json);
             JsonRoot deserialized = JsonSerializer.Deserialize<JsonRoot>(jsonString, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            deserialized.IgnoreKerning = IgnoreKerning;
 
             return deserialized;
         }

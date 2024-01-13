@@ -37,7 +37,7 @@ float median(float r, float g, float b) {
 
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
-	float2 coord = input.TextureCoordinates;
+    float2 coord = input.TextureCoordinates;
     float2 msdfUnit = pxRange / textureSize;
     float3 samp = (tex2D(SpriteTextureSampler, coord) * input.Color).rgb;
 	float sigDist = median(samp.r, samp.g, samp.b) - 0.5;
