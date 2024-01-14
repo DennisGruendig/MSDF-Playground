@@ -2,6 +2,7 @@
 using MSDF_Font_Library.Content;
 using MSDF_Font_Library.Datatypes;
 using MSDF_Font_Library.FontAtlas;
+using System;
 using System.Linq;
 
 namespace MSDF_Font_Library.Rendering
@@ -44,27 +45,33 @@ namespace MSDF_Font_Library.Rendering
 
         private void UpdateDrawCallBuffer()
         {
-            double cursorTravel = 0;
+            float cursorTravel = 0;
             bool isLast;
             char? nextChar;
-            double advance;
+            float advance;
             Vector2 offset = Vector2.Zero;
 
             for (int i = 0; i < _glyphs.Length; i++)
             {
                 isLast = i == _glyphs.Length - 1;
                 nextChar = isLast ? null : _glyphs[i + 1].Character;
-                advance = (isLast ? _glyphs[i].CursorBounds.Width : _glyphs[i].GetAdvance(nextChar)) * _scale.X;
+                //advance = (isLast ? _glyphs[i].CursorBounds.Width : _glyphs[i].GetAdvance(nextChar)) * _scale.X;
+                advance = (isLast ? (float)Math.Round(_glyphs[i].CursorBounds.Width, 7) : (float)Math.Round(_glyphs[i].GetAdvance(nextChar), 7)) * _scale.X;
 
                 _drawCallBuffer[i].Scale = _scale;
                 _drawCallBuffer[i].Position = new Vector2(
-                    (float)(_position.X + cursorTravel + _glyphs[i].CursorBounds.X),
-                    (float)(_position.Y + _glyphs[i].CursorBounds.Y * _scale.Y));
+                    (float)Math.Round(_position.X + cursorTravel + _glyphs[i].CursorBounds.X, 7),
+                    (float)Math.Round(_position.Y + _glyphs[i].CursorBounds.Y * _scale.Y, 7));
 
                 cursorTravel += advance;
             }
 
-            _size = new Vector2((float)cursorTravel, (float)_font.ActualHeight * _scale.Y);
+            //_size = new Vector2((float)cursorTravel, (float)_font.ActualHeight * _scale.Y);
+            //_size = new Vector2(
+            //    (float)Math.Round(cursorTravel, 7),
+            //    (float)Math.Round(_font.ActualHeight * _scale.Y, 7));
+
+            _size = new Vector2(cursorTravel, (float)Math.Round(_font.ActualHeight, 7) * _scale.Y);
 
             switch (_horiAlignment)
             {

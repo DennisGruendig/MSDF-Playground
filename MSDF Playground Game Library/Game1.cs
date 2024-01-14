@@ -49,8 +49,8 @@ namespace MSDF_Playground_Game_Library
         {
             _graphics = new GraphicsDeviceManager(this)
             {
-                PreferredBackBufferWidth = 1800,
-                PreferredBackBufferHeight = 800,
+                PreferredBackBufferWidth = 1600,
+                PreferredBackBufferHeight = 900,
                 SynchronizeWithVerticalRetrace = false,
                 GraphicsProfile = GraphicsProfile.HiDef
             };
