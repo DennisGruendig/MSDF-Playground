@@ -42,7 +42,7 @@ namespace MSDF_Font_Library.Rendering
 
             _spriteBatch.Begin(effect: _shader);
             _shader.Parameters["pxRange"].SetValue(Font.DistanceRange);
-            _shader.Parameters["textureSize"].SetValue(new Vector2(Font.AtlasWidth, Font.AtlasHeight));
+            _shader.Parameters["textureSize"].SetValue(Font.AtlasSize);
             _shader.Parameters["fgColor"].SetValue(ForegroundColor.ToVector4());
         }
 

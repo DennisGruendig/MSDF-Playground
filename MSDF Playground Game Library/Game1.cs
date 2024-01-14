@@ -3,15 +3,11 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MSDF_Font_Library.Content;
 using MSDF_Font_Library.Datatypes;
-using MSDF_Font_Library.FontAtlas;
 using MSDF_Font_Library.Rendering;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MSDF_Playground_Game_Library
 {
@@ -21,17 +17,13 @@ namespace MSDF_Playground_Game_Library
         private SpriteBatch _spriteBatch;
         private ShaderFontBatch _ShaderFontBatch;
         private Effect MSDFshader;
-        private ShaderFont Font;
-        private string FontName = "BitPotionExt";
         private bool firstRender = true;
 
         private KeyboardState kstate;
         private KeyboardState pkstate;
         private MouseState mstate;
         private MouseState pmstate;
-
         private TimeSpan next;
-        private int fontIndex = -1;
 
         private float Size = 1;
         private Vector2 Position = new Vector2(0, 0);
@@ -44,6 +36,10 @@ namespace MSDF_Playground_Game_Library
 
         private VerticalAlignment valign = VerticalAlignment.Base;
         private HorizontalAlignment halign = HorizontalAlignment.Center;
+
+        private ShaderFont Font => _ShaderFontBatch.Font; 
+        private Dictionary<string, ShaderFont> _fonts = new();
+        private int _fontIndex = 0;
 
         public Game1()
         {
@@ -69,10 +65,26 @@ namespace MSDF_Playground_Game_Library
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             MSDFshader = Content.Load<Effect>("MSDFShader");
 
-            Font = Content.Load<ShaderFont>($"TrueTypeFonts/{FontName}");
-            Font.Initialize(GraphicsDevice);
+            foreach (string path in Directory.GetFiles(@"Content\Fonts\Detailed"))
+            {
+                string filename = Path.GetFileNameWithoutExtension(path);
+                ShaderFont font = Content.Load<ShaderFont>($"Fonts/Detailed/{filename}");
+                _fonts.Add(filename, font);
+            }
 
-            _ShaderFontBatch = new ShaderFontBatch(GraphicsDevice, Font, MSDFshader);
+            foreach (string path in Directory.GetFiles(@"Content\Fonts\Pixelated"))
+            {
+                string filename = Path.GetFileNameWithoutExtension(path);
+                ShaderFont font = Content.Load<ShaderFont>($"Fonts/Pixelated/{filename}");
+                _fonts.Add(filename, font);
+            }
+
+            foreach (var font in _fonts)
+            {
+                font.Value.Initialize(GraphicsDevice);
+            }
+
+            _ShaderFontBatch = new ShaderFontBatch(GraphicsDevice, _fonts.First().Value, MSDFshader);
         }
 
         protected override void Update(GameTime gameTime)
@@ -124,27 +136,11 @@ namespace MSDF_Playground_Game_Library
                 else if (valign == VerticalAlignment.Middle)
                     valign = VerticalAlignment.Top;
 
-            if ((kstate.IsKeyDown(Keys.Space) && !pkstate.IsKeyDown(Keys.Space)))// || gameTime.TotalGameTime >= next)
+            if ((kstate.IsKeyDown(Keys.Space) && !pkstate.IsKeyDown(Keys.Space)) || gameTime.TotalGameTime >= next)
+            //if ((kstate.IsKeyDown(Keys.Space) && !pkstate.IsKeyDown(Keys.Space)))
             {
-                fontIndex = fontIndex < 10 ? fontIndex + 1 : 0;
-                switch (fontIndex)
-                {
-                    case 0: FontName = "Arial"; break;
-                    case 1: FontName = "Paperkind"; break;
-                    case 2: FontName = "KiwiSoda"; break;
-                    case 3: FontName = "Connecticut"; break;
-                    case 4: FontName = "Germany"; break;
-                    case 5: FontName = "Bermuda"; break;
-                    case 6: FontName = "Sylfaen"; break;
-                    case 7: FontName = "SanDiego"; break;
-                    case 8: FontName = "Inkfree"; break;
-                    case 9: FontName = "NDSBIOS"; break;
-                    case 10: FontName = "BitPotionExt"; break;
-                }
-
-                Font = Content.Load<ShaderFont>($"TrueTypeFonts/{FontName}");
-                Font.Initialize(GraphicsDevice);
-                _ShaderFontBatch.Font = Font;
+                _fontIndex = _fontIndex < _fonts.Count - 1 ? _fontIndex + 1 : 0;
+                _ShaderFontBatch.Font = _fonts.ElementAt(_fontIndex).Value;
             }
 
             if (gameTime.TotalGameTime >= next)
@@ -214,7 +210,7 @@ namespace MSDF_Playground_Game_Library
             start = DateTime.Now;
 
             _ShaderFontBatch.Begin(Size);
-            _ShaderFontBatch.DrawString($"Font Name: {FontName} - {frameMessage}", new Vector2(5, (int)(5 * uiScale.Y)), uiScale, HorizontalAlignment.Left, VerticalAlignment.Top);
+            _ShaderFontBatch.DrawString($"Font {_fontIndex + 1} Name: {Font.Name} - {frameMessage}", new Vector2(5, (int)(5 * uiScale.Y)), uiScale, HorizontalAlignment.Left, VerticalAlignment.Top);
             _ShaderFontBatch.DrawString($"Scale: {Size.ToString("0.000")}", new Vector2(5, (int)(5 + Font.ActualLineHeight * uiScale.Y)), uiScale, HorizontalAlignment.Left, VerticalAlignment.Top);
             _ShaderFontBatch.DrawString($"{halign} / {valign}", new Vector2(_graphics.PreferredBackBufferWidth * 0.5f + (int)Position.X, _graphics.PreferredBackBufferHeight * 0.5f + (int)Position.Y), new Vector2(Size), halign, valign);
             _ShaderFontBatch.End();

@@ -14,199 +14,949 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/Balgruf_Italic.otf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/Balgruf_Italic.otf;Fonts/Detailed/Balgruf_Italic.otf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/Balgruf.otf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/Balgruf.otf;Fonts/Detailed/Balgruf.otf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/Batuphat Script.otf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/Batuphat Script.otf;Fonts/Detailed/Batuphat Script.otf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/BeliyaSignature.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/BeliyaSignature.ttf;Fonts/Detailed/BeliyaSignature.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/Boba Milky.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/Boba Milky.ttf;Fonts/Detailed/Boba Milky.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/Cakecafe.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/Cakecafe.ttf;Fonts/Detailed/Cakecafe.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/CAT Altenglisch.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/CAT Altenglisch.ttf;Fonts/Detailed/CAT Altenglisch.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/CoffeCake.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/CoffeCake.ttf;Fonts/Detailed/CoffeCake.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/goudy-initialen.regular.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/goudy-initialen.regular.ttf;Fonts/Detailed/goudy-initialen.regular.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/LTMuseum-Bold.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/LTMuseum-Bold.ttf;Fonts/Detailed/LTMuseum-Bold.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/LTMuseum-BoldItalic.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/LTMuseum-BoldItalic.ttf;Fonts/Detailed/LTMuseum-BoldItalic.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/LTMuseum-Inline.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/LTMuseum-Inline.ttf;Fonts/Detailed/LTMuseum-Inline.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/LTMuseum-Ital.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/LTMuseum-Ital.ttf;Fonts/Detailed/LTMuseum-Ital.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/LTMuseum-Light.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/LTMuseum-Light.ttf;Fonts/Detailed/LTMuseum-Light.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/LTMuseum-LightItalic.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/LTMuseum-LightItalic.ttf;Fonts/Detailed/LTMuseum-LightItalic.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/LTMuseum-Reg.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/LTMuseum-Reg.ttf;Fonts/Detailed/LTMuseum-Reg.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/LTRemark-Black.otf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/LTRemark-Black.otf;Fonts/Detailed/LTRemark-Black.otf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/LTRemark-BlackItalic.otf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/LTRemark-BlackItalic.otf;Fonts/Detailed/LTRemark-BlackItalic.otf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/LTRemark-Bold.otf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/LTRemark-Bold.otf;Fonts/Detailed/LTRemark-Bold.otf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/LTRemark-BoldItalic.otf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/LTRemark-BoldItalic.otf;Fonts/Detailed/LTRemark-BoldItalic.otf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/LTRemark-Italic.otf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/LTRemark-Italic.otf;Fonts/Detailed/LTRemark-Italic.otf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/LTRemark-Regular.otf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/LTRemark-Regular.otf;Fonts/Detailed/LTRemark-Regular.otf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/Margarine.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/Margarine.ttf;Fonts/Detailed/Margarine.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/Paperkind.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/Paperkind.ttf;Fonts/Detailed/Paperkind.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/PASTI-Oblique.otf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/PASTI-Oblique.otf;Fonts/Detailed/PASTI-Oblique.otf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/PASTI-Regular.otf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/PASTI-Regular.otf;Fonts/Detailed/PASTI-Regular.otf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/playball.regular.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/playball.regular.ttf;Fonts/Detailed/playball.regular.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/Spirit's Sword.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/Spirit's Sword.ttf;Fonts/Detailed/Spirit's Sword.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/Super Bubble.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/Super Bubble.ttf;Fonts/Detailed/Super Bubble.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Detailed/Swallow Kick.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Detailed/Swallow Kick.ttf;Fonts/Detailed/Swallow Kick.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/8-bit-pusab.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/8-bit-pusab.ttf;Fonts/Pixelated/8-bit-pusab.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/8bitlim.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/8bitlim.ttf;Fonts/Pixelated/8bitlim.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/8bitlimo.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/8bitlimo.ttf;Fonts/Pixelated/8bitlimo.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/BitPotionExt.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/BitPotionExt.ttf;Fonts/Pixelated/BitPotionExt.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/Bonefish.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/Bonefish.ttf;Fonts/Pixelated/Bonefish.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/Color Basic.otf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/Color Basic.otf;Fonts/Pixelated/Color Basic.otf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/Commodore Pixelized.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/Commodore Pixelized.ttf;Fonts/Pixelated/Commodore Pixelized.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/DoubleHomicide.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/DoubleHomicide.ttf;Fonts/Pixelated/DoubleHomicide.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/EnterCommand-Bold.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/EnterCommand-Bold.ttf;Fonts/Pixelated/EnterCommand-Bold.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/EnterCommand-Italic.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/EnterCommand-Italic.ttf;Fonts/Pixelated/EnterCommand-Italic.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/EnterCommand.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/EnterCommand.ttf;Fonts/Pixelated/EnterCommand.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/GenericMobileSystem.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/GenericMobileSystem.ttf;Fonts/Pixelated/GenericMobileSystem.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/GenericMobileSystemNuevo.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/GenericMobileSystemNuevo.ttf;Fonts/Pixelated/GenericMobileSystemNuevo.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/GenericMobileSystemNuevoO.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/GenericMobileSystemNuevoO.ttf;Fonts/Pixelated/GenericMobileSystemNuevoO.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/GenericMobileSystemO.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/GenericMobileSystemO.ttf;Fonts/Pixelated/GenericMobileSystemO.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/GrapeSoda.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/GrapeSoda.ttf;Fonts/Pixelated/GrapeSoda.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/HeinzHeinrich-Regular.otf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/HeinzHeinrich-Regular.otf;Fonts/Pixelated/HeinzHeinrich-Regular.otf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/Ingsat TST_CRD Regular.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/Ingsat TST_CRD Regular.ttf;Fonts/Pixelated/Ingsat TST_CRD Regular.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/joystix monospace.otf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/joystix monospace.otf;Fonts/Pixelated/joystix monospace.otf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/KiwiSoda.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/KiwiSoda.ttf;Fonts/Pixelated/KiwiSoda.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/Lilliput Steps.otf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/Lilliput Steps.otf;Fonts/Pixelated/Lilliput Steps.otf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/little-pixel.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/little-pixel.ttf;Fonts/Pixelated/little-pixel.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/Microserif.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/Microserif.ttf;Fonts/Pixelated/Microserif.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/ModernDOS8x14.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/ModernDOS8x14.ttf;Fonts/Pixelated/ModernDOS8x14.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/ModernDOS8x16.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/ModernDOS8x16.ttf;Fonts/Pixelated/ModernDOS8x16.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/ModernDOS8x8.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/ModernDOS8x8.ttf;Fonts/Pixelated/ModernDOS8x8.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/ModernDOS9x14.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/ModernDOS9x14.ttf;Fonts/Pixelated/ModernDOS9x14.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/ModernDOS9x16.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/ModernDOS9x16.ttf;Fonts/Pixelated/ModernDOS9x16.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/ndsbios.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/ndsbios.ttf;Fonts/Pixelated/ndsbios.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/nokiafc22.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/nokiafc22.ttf;Fonts/Pixelated/nokiafc22.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/Notepen.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/Notepen.ttf;Fonts/Pixelated/Notepen.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/orange kid.otf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/orange kid.otf;Fonts/Pixelated/orange kid.otf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/OwreKynge.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/OwreKynge.ttf;Fonts/Pixelated/OwreKynge.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/Piacevoli.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/Piacevoli.ttf;Fonts/Pixelated/Piacevoli.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/PixAntiqua.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/PixAntiqua.ttf;Fonts/Pixelated/PixAntiqua.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/Pixel Takhisis.otf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/Pixel Takhisis.otf;Fonts/Pixelated/Pixel Takhisis.otf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/Pixel-UniCode.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/Pixel-UniCode.ttf;Fonts/Pixelated/Pixel-UniCode.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/PixelatedPusab.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/PixelatedPusab.ttf;Fonts/Pixelated/PixelatedPusab.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/pixeleum-48.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/pixeleum-48.ttf;Fonts/Pixelated/pixeleum-48.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/PixelMaster.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/PixelMaster.ttf;Fonts/Pixelated/PixelMaster.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/PixeloidMono.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/PixeloidMono.ttf;Fonts/Pixelated/PixeloidMono.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/PixeloidSans-Bold.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/PixeloidSans-Bold.ttf;Fonts/Pixelated/PixeloidSans-Bold.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/PixeloidSans.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/PixeloidSans.ttf;Fonts/Pixelated/PixeloidSans.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/Pokemon Classic.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/Pokemon Classic.ttf;Fonts/Pixelated/Pokemon Classic.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/Pokemon X and Y.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/Pokemon X and Y.ttf;Fonts/Pixelated/Pokemon X and Y.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/PressStart2P.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/PressStart2P.ttf;Fonts/Pixelated/PressStart2P.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/PrStart.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/PrStart.ttf;Fonts/Pixelated/PrStart.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/prstartk.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/prstartk.ttf;Fonts/Pixelated/prstartk.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/resource.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/resource.ttf;Fonts/Pixelated/resource.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/RootBeer.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/RootBeer.ttf;Fonts/Pixelated/RootBeer.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/SadMachine.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/SadMachine.ttf;Fonts/Pixelated/SadMachine.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/Scriptorium.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/Scriptorium.ttf;Fonts/Pixelated/Scriptorium.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/Sneak Attack.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/Sneak Attack.ttf;Fonts/Pixelated/Sneak Attack.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/Squarewave-Bold.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/Squarewave-Bold.ttf;Fonts/Pixelated/Squarewave-Bold.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/Squarewave-Italic.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/Squarewave-Italic.ttf;Fonts/Pixelated/Squarewave-Italic.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/Squarewave.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/Squarewave.ttf;Fonts/Pixelated/Squarewave.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/technofosiano.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/technofosiano.ttf;Fonts/Pixelated/technofosiano.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/Unbalanced.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/Unbalanced.ttf;Fonts/Pixelated/Unbalanced.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/VCR_OSD_MONO.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/VCR_OSD_MONO.ttf;Fonts/Pixelated/VCR_OSD_MONO.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/VCRosdNEUE.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/VCRosdNEUE.ttf;Fonts/Pixelated/VCRosdNEUE.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/videotype.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/videotype.ttf;Fonts/Pixelated/videotype.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/W95FA.otf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/W95FA.otf;Fonts/Pixelated/W95FA.otf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/zx_spectrum-7_bold.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/zx_spectrum-7_bold.ttf;Fonts/Pixelated/zx_spectrum-7_bold.ttf
+
+#begin ../../MSDF Playground Game Library/Content/Fonts/Pixelated/zx_spectrum-7.ttf
+/importer:ShaderFontImporter
+/processor:ShaderFontProcessor
+/processorParam:Resolution=128
+/processorParam:DistanceRange=2
+/processorParam:CharsetDefinition=
+/processorParam:KeepTemp=False
+/processorParam:IgnoreKerning=False
+/build:../../MSDF Playground Game Library/Content/Fonts/Pixelated/zx_spectrum-7.ttf;Fonts/Pixelated/zx_spectrum-7.ttf
+
 #begin ../../MSDF Playground Game Library/Content/MSDFShader.fx
 /importer:EffectImporter
 /processor:EffectProcessor
 /processorParam:DebugMode=Auto
 /build:../../MSDF Playground Game Library/Content/MSDFShader.fx;MSDFShader.fx
-
-#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Arial.ttf
-/importer:ShaderFontImporter
-/processor:ShaderFontProcessor
-/processorParam:Resolution=128
-/processorParam:DistanceRange=2
-/processorParam:CharsetDefinition=
-/processorParam:KeepTemp=True
-/processorParam:IgnoreKerning=False
-/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Arial.ttf;TrueTypeFonts/Arial.ttf
-
-#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Bermuda.TTF
-/importer:ShaderFontImporter
-/processor:ShaderFontProcessor
-/processorParam:Resolution=128
-/processorParam:DistanceRange=2
-/processorParam:CharsetDefinition=
-/processorParam:KeepTemp=True
-/processorParam:IgnoreKerning=False
-/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Bermuda.TTF;TrueTypeFonts/Bermuda.TTF
-
-#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/BitPotionExt.ttf
-/importer:ShaderFontImporter
-/processor:ShaderFontProcessor
-/processorParam:Resolution=128
-/processorParam:DistanceRange=1
-/processorParam:CharsetDefinition=
-/processorParam:KeepTemp=True
-/processorParam:IgnoreKerning=False
-/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/BitPotionExt.ttf;TrueTypeFonts/BitPotionExt.ttf
-
-#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Brougham Bold.ttf
-/importer:ShaderFontImporter
-/processor:ShaderFontProcessor
-/processorParam:Resolution=128
-/processorParam:DistanceRange=2
-/processorParam:CharsetDefinition=
-/processorParam:KeepTemp=True
-/processorParam:IgnoreKerning=False
-/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Brougham Bold.ttf;TrueTypeFonts/Brougham Bold.ttf
-
-#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Brougham.ttf
-/importer:ShaderFontImporter
-/processor:ShaderFontProcessor
-/processorParam:Resolution=128
-/processorParam:DistanceRange=2
-/processorParam:CharsetDefinition=
-/processorParam:KeepTemp=True
-/processorParam:IgnoreKerning=False
-/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Brougham.ttf;TrueTypeFonts/Brougham.ttf
-
-#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Connecticut.ttf
-/importer:ShaderFontImporter
-/processor:ShaderFontProcessor
-/processorParam:Resolution=128
-/processorParam:DistanceRange=2
-/processorParam:CharsetDefinition=
-/processorParam:KeepTemp=True
-/processorParam:IgnoreKerning=False
-/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Connecticut.ttf;TrueTypeFonts/Connecticut.ttf
-
-#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Gabriola.ttf
-/importer:ShaderFontImporter
-/processor:ShaderFontProcessor
-/processorParam:Resolution=128
-/processorParam:DistanceRange=2
-/processorParam:CharsetDefinition=
-/processorParam:KeepTemp=True
-/processorParam:IgnoreKerning=False
-/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Gabriola.ttf;TrueTypeFonts/Gabriola.ttf
-
-#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Germany.ttf
-/importer:ShaderFontImporter
-/processor:ShaderFontProcessor
-/processorParam:Resolution=128
-/processorParam:DistanceRange=2
-/processorParam:CharsetDefinition=
-/processorParam:KeepTemp=True
-/processorParam:IgnoreKerning=False
-/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Germany.ttf;TrueTypeFonts/Germany.ttf
-
-#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Inkfree.ttf
-/importer:ShaderFontImporter
-/processor:ShaderFontProcessor
-/processorParam:Resolution=128
-/processorParam:DistanceRange=2
-/processorParam:CharsetDefinition=
-/processorParam:KeepTemp=True
-/processorParam:IgnoreKerning=False
-/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Inkfree.ttf;TrueTypeFonts/Inkfree.ttf
-
-#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Istanbul.ttf
-/importer:ShaderFontImporter
-/processor:ShaderFontProcessor
-/processorParam:Resolution=128
-/processorParam:DistanceRange=2
-/processorParam:CharsetDefinition=
-/processorParam:KeepTemp=True
-/processorParam:IgnoreKerning=False
-/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Istanbul.ttf;TrueTypeFonts/Istanbul.ttf
-
-#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/KiwiSoda.ttf
-/importer:ShaderFontImporter
-/processor:ShaderFontProcessor
-/processorParam:Resolution=128
-/processorParam:DistanceRange=1
-/processorParam:CharsetDefinition=
-/processorParam:KeepTemp=True
-/processorParam:IgnoreKerning=False
-/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/KiwiSoda.ttf;TrueTypeFonts/KiwiSoda.ttf
-
-#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/NDSBIOS.TTF
-/importer:ShaderFontImporter
-/processor:ShaderFontProcessor
-/processorParam:Resolution=128
-/processorParam:DistanceRange=1
-/processorParam:CharsetDefinition=
-/processorParam:KeepTemp=True
-/processorParam:IgnoreKerning=False
-/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/NDSBIOS.TTF;TrueTypeFonts/NDSBIOS.TTF
-
-#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/rainyhearts.ttf
-/importer:ShaderFontImporter
-/processor:ShaderFontProcessor
-/processorParam:Resolution=128
-/processorParam:DistanceRange=2
-/processorParam:CharsetDefinition=
-/processorParam:KeepTemp=True
-/processorParam:IgnoreKerning=False
-/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/rainyhearts.ttf;TrueTypeFonts/rainyhearts.ttf
-
-#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/SanDiego.TTF
-/importer:ShaderFontImporter
-/processor:ShaderFontProcessor
-/processorParam:Resolution=128
-/processorParam:DistanceRange=2
-/processorParam:CharsetDefinition=
-/processorParam:KeepTemp=True
-/processorParam:IgnoreKerning=False
-/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/SanDiego.TTF;TrueTypeFonts/SanDiego.TTF
-
-#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/SansSerifCollection.ttf
-/importer:ShaderFontImporter
-/processor:ShaderFontProcessor
-/processorParam:Resolution=128
-/processorParam:DistanceRange=2
-/processorParam:CharsetDefinition=
-/processorParam:KeepTemp=True
-/processorParam:IgnoreKerning=False
-/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/SansSerifCollection.ttf;TrueTypeFonts/SansSerifCollection.ttf
-
-#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Sitka.ttf
-/importer:ShaderFontImporter
-/processor:ShaderFontProcessor
-/processorParam:Resolution=128
-/processorParam:DistanceRange=2
-/processorParam:CharsetDefinition=
-/processorParam:KeepTemp=True
-/processorParam:IgnoreKerning=False
-/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Sitka.ttf;TrueTypeFonts/Sitka.ttf
-
-#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/sylfaen.ttf
-/importer:ShaderFontImporter
-/processor:ShaderFontProcessor
-/processorParam:Resolution=128
-/processorParam:DistanceRange=2
-/processorParam:CharsetDefinition=
-/processorParam:KeepTemp=True
-/processorParam:IgnoreKerning=False
-/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/sylfaen.ttf;TrueTypeFonts/sylfaen.ttf
-
-#begin ../../MSDF Playground Game Library/Content/TrueTypeFonts/Utah.ttf
-/importer:ShaderFontImporter
-/processor:ShaderFontProcessor
-/processorParam:Resolution=128
-/processorParam:DistanceRange=2
-/processorParam:CharsetDefinition=
-/processorParam:KeepTemp=True
-/processorParam:IgnoreKerning=False
-/build:../../MSDF Playground Game Library/Content/TrueTypeFonts/Utah.ttf;TrueTypeFonts/Utah.ttf
-
-#begin ../../MSDF Playground Game Library/Font Downloads/paperkind/Paperkind.otf
-/importer:ShaderFontImporter
-/processor:ShaderFontProcessor
-/processorParam:Resolution=128
-/processorParam:DistanceRange=2
-/processorParam:CharsetDefinition=
-/processorParam:KeepTemp=True
-/processorParam:IgnoreKerning=False
-/build:../../MSDF Playground Game Library/Font Downloads/paperkind/Paperkind.otf;TrueTypeFonts/Paperkind.otf
 

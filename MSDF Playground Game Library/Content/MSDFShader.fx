@@ -38,7 +38,7 @@ float4 MainPS(VertexShaderOutput input) : COLOR
     float sd = median(msd.r, msd.g, msd.b);
     float screenPxDistance = max(0.5 * dot(unitRange, screenTexSize), 1.0) * (sd - 0.5);
     float opacity = clamp(screenPxDistance + 0.5, 0.0, 1.0);
-    return lerp(float4(0, 0, 0, 0), fgColor, opacity);
+    return lerp(float4(0, 0, 0, 0.2), fgColor, opacity);
 }
 
 technique SpriteDrawing
