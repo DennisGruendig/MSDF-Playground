@@ -94,6 +94,14 @@ namespace MSDF_Playground_Game_Library
             pmstate = mstate;
             mstate = Mouse.GetState();
 
+            float[] vals = new float[Font.AtlasTexture.Width];
+            for (int i = 0; i < Font.AtlasTexture.Width; i++)
+            {
+                Vector2 val1 = new Vector2(2f / Font.AtlasTexture.Width);
+                Vector2 val2 = new Vector2(1f / i);
+                vals[i] = Vector2.Dot(val1, val2);
+            }
+
             if (mstate.RightButton == ButtonState.Pressed)
             {
                 Size = 1f;
@@ -101,10 +109,12 @@ namespace MSDF_Playground_Game_Library
             }
             else
             {
-                if (mstate.LeftButton == ButtonState.Pressed)
-                    Position += (mstate.Position - pmstate.Position).ToVector2();
+                float shifting = kstate.IsKeyDown(Keys.LeftShift) ? 0.1f : 1f;
 
-                Size += 0.01f / 120f * (mstate.ScrollWheelValue - pmstate.ScrollWheelValue);
+                if (mstate.LeftButton == ButtonState.Pressed)
+                    Position += (mstate.Position - pmstate.Position).ToVector2() * shifting;
+
+                Size += 0.001f / 120f * (mstate.ScrollWheelValue - pmstate.ScrollWheelValue);
                 if (Size < 0) Size = 0;
             }
 
@@ -136,11 +146,17 @@ namespace MSDF_Playground_Game_Library
                 else if (valign == VerticalAlignment.Middle)
                     valign = VerticalAlignment.Top;
 
-            if ((kstate.IsKeyDown(Keys.Space) && !pkstate.IsKeyDown(Keys.Space)) || gameTime.TotalGameTime >= next)
-            //if ((kstate.IsKeyDown(Keys.Space) && !pkstate.IsKeyDown(Keys.Space)))
+            //if ((kstate.IsKeyDown(Keys.Space) && !pkstate.IsKeyDown(Keys.Space)) || gameTime.TotalGameTime >= next)
+            if (kstate.IsKeyDown(Keys.Space) && !pkstate.IsKeyDown(Keys.Space))
             {
                 _fontIndex = _fontIndex < _fonts.Count - 1 ? _fontIndex + 1 : 0;
                 _ShaderFontBatch.Font = _fonts.ElementAt(_fontIndex).Value;
+            }
+
+            if (kstate.IsKeyDown(Keys.Enter) && !pkstate.IsKeyDown(Keys.Enter))
+            {
+                _fonts.TryGetValue("GrapeSoda", out ShaderFont font);
+                _ShaderFontBatch.Font = font;
             }
 
             if (gameTime.TotalGameTime >= next)
@@ -198,21 +214,22 @@ namespace MSDF_Playground_Game_Library
             _spriteBatch.Draw(pixelbl, new Rectangle((int)mid.X - 1 + (int)Position.X, 0, 2, vp.Height), lineIntensity);
 
             // Font positions
-            _spriteBatch.Draw(pixelrd, new Rectangle(0, (int)(4 * uiScale.Y), vp.Width, 2), lineIntensity2);
-            _spriteBatch.Draw(pixelgr, new Rectangle(0, (int)((4 * uiScale.Y) + (Font.Ascender * Font.FontSize) * uiScale.Y), vp.Width, 2), lineIntensity2);
-            _spriteBatch.Draw(pixelbu, new Rectangle(0, (int)((4 * uiScale.Y) + (Font.Ascender * Font.FontSize + Math.Abs(Font.Descender) * Font.FontSize) * uiScale.Y), vp.Width, 2), lineIntensity2);
-            _spriteBatch.Draw(pixelye, new Rectangle(0, (int)((4 * uiScale.Y) + (Font.LineHeight * Font.FontSize) * uiScale.Y), vp.Width, 2), lineIntensity2);
-            _spriteBatch.Draw(pixelma, new Rectangle(0, (int)((4 * uiScale.Y) + (Font.Height * Font.FontSize * 0.5f) * uiScale.Y), vp.Width, 2), lineIntensity2);
-            _spriteBatch.Draw(pixelcy, new Rectangle(0, (int)((4 * uiScale.Y) + (Font.Height * Font.FontSize) * uiScale.Y), vp.Width, 2), lineIntensity2);
+            _spriteBatch.Draw(pixelrd, new Rectangle(0, (int)Math.Round(4 * uiScale.Y), vp.Width, 2), lineIntensity2);
+            _spriteBatch.Draw(pixelgr, new Rectangle(0, (int)Math.Round((4 * uiScale.Y) + (Font.Ascender * Font.FontSize) * uiScale.Y), vp.Width, 2), lineIntensity2);
+            _spriteBatch.Draw(pixelbu, new Rectangle(0, (int)Math.Round((4 * uiScale.Y) + (Font.Ascender * Font.FontSize + Math.Abs(Font.Descender) * Font.FontSize) * uiScale.Y), vp.Width, 2), lineIntensity2);
+            _spriteBatch.Draw(pixelye, new Rectangle(0, (int)Math.Round((4 * uiScale.Y) + (Font.LineHeight * Font.FontSize) * uiScale.Y), vp.Width, 2), lineIntensity2);
+            _spriteBatch.Draw(pixelma, new Rectangle(0, (int)Math.Round((4 * uiScale.Y) + (Font.Height * Font.FontSize * 0.5f) * uiScale.Y), vp.Width, 2), lineIntensity2);
+            _spriteBatch.Draw(pixelcy, new Rectangle(0, (int)Math.Round((4 * uiScale.Y) + (Font.Height * Font.FontSize) * uiScale.Y), vp.Width, 2), lineIntensity2);
 
             _spriteBatch.End();
 
-            start = DateTime.Now;
+            start = DateTime.Now; 
+            Vector2 pos = new Vector2(_graphics.PreferredBackBufferWidth * 0.5f + Position.X, _graphics.PreferredBackBufferHeight * 0.5f + Position.Y);
 
             _ShaderFontBatch.Begin(Size);
             _ShaderFontBatch.DrawString($"Font {_fontIndex + 1} Name: {Font.Name} - {frameMessage}", new Vector2(5, (int)(5 * uiScale.Y)), uiScale, HorizontalAlignment.Left, VerticalAlignment.Top);
-            _ShaderFontBatch.DrawString($"Scale: {Size.ToString("0.000")}", new Vector2(5, (int)(5 + Font.ActualLineHeight * uiScale.Y)), uiScale, HorizontalAlignment.Left, VerticalAlignment.Top);
-            _ShaderFontBatch.DrawString($"{halign} / {valign}", new Vector2(_graphics.PreferredBackBufferWidth * 0.5f + (int)Position.X, _graphics.PreferredBackBufferHeight * 0.5f + (int)Position.Y), new Vector2(Size), halign, valign);
+            _ShaderFontBatch.DrawString($"Scale: {Size.ToString("0.000")}; Pos: {pos.X.ToString("0.0")} / {pos.Y.ToString("0.0")}", new Vector2(5, (int)(5 + Font.ActualLineHeight * uiScale.Y)), uiScale, HorizontalAlignment.Left, VerticalAlignment.Top);
+            _ShaderFontBatch.DrawString($"{halign} / {valign}", pos, new Vector2(1), halign, valign);
             _ShaderFontBatch.End();
 
             spanlist[spanindex++] = DateTime.Now - start;

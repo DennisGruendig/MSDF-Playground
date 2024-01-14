@@ -21,7 +21,7 @@ struct VertexShaderOutput
 	float2 TextureCoordinates : TEXCOORD0;
 };
 
-float  pxRange;
+float pxRange;
 float2 textureSize;
 float4 fgColor;
 
@@ -32,13 +32,13 @@ float median(float r, float g, float b) {
 float4 MainPS(VertexShaderOutput input) : COLOR
 {
     float2 coord = input.TextureCoordinates;
-    float2 unitRange = pxRange / textureSize;
-    float2 screenTexSize = 1.0 / fwidth(coord);
     float3 msd = tex2D(SpriteTextureSampler, coord).rgb;
     float sd = median(msd.r, msd.g, msd.b);
+    float2 unitRange = float2(pxRange, pxRange) / textureSize;
+    float2 screenTexSize = float2(1.0, 1.0) / fwidth(coord);
     float screenPxDistance = max(0.5 * dot(unitRange, screenTexSize), 1.0) * (sd - 0.5);
     float opacity = clamp(screenPxDistance + 0.5, 0.0, 1.0);
-    return lerp(float4(0, 0, 0, 0.2), fgColor, opacity);
+    return lerp(float4(0, 0, 0, 0), fgColor, opacity);
 }
 
 technique SpriteDrawing

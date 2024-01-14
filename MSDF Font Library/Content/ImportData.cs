@@ -17,7 +17,7 @@ namespace MSDF_Font_Library.Content
         public string Name => Path.GetFileNameWithoutExtension(FontFile);
         public string Charset => Path.Combine(TempFolder, "Charset.txt");
         public string Json => Path.Combine(TempFolder, "Output.json");
-        public string Bitmap => Path.Combine(TempFolder, "Atlas.bmp");
+        public string AtlasImage => Path.Combine(TempFolder, "Atlas.png");
 
     }
 }

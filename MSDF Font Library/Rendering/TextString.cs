@@ -52,6 +52,7 @@ namespace MSDF_Font_Library.Rendering
             Vector2 offset = Vector2.Zero;
 
             for (int i = 0; i < _glyphs.Length; i++)
+
             {
                 isLast = i == _glyphs.Length - 1;
                 nextChar = isLast ? null : _glyphs[i + 1].Character;
@@ -77,7 +78,7 @@ namespace MSDF_Font_Library.Rendering
             {
                 case VerticalAlignment.Top: break;
                 case VerticalAlignment.Middle: offset.Y -= _size.Y * 0.5f; break;
-                case VerticalAlignment.Base: offset.Y -= _scale.Y * (float)_font.ActualBaseLine; break;
+                case VerticalAlignment.Base: offset.Y -= _scale.Y * _font.ActualBaseLine; break;
                 case VerticalAlignment.Bottom: offset.Y -= _size.Y; break;
             }
 

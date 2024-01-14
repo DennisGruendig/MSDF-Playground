@@ -28,10 +28,10 @@ namespace MSDF_Font_Library.FontAtlas
                 .ToDictionary(x => (char)x.Unicode2, x => (float)Math.Round(x.Advance, 7) * font.FontSize);
 
             _AtlasSource = new Rectangle(
-                (int)(glyph.AtlasBounds.Left + 0.5),
-                (int)(font.AtlasHeight - glyph.AtlasBounds.Bottom - (glyph.AtlasBounds.Top - glyph.AtlasBounds.Bottom) + 0.5),
-                (int)(glyph.AtlasBounds.Right - glyph.AtlasBounds.Left - 0.5),
-                (int)(glyph.AtlasBounds.Top - glyph.AtlasBounds.Bottom - 0.5));
+                (int)Math.Round(glyph.AtlasBounds.Left + 0.5, 1),
+                (int)Math.Round(font.AtlasHeight - glyph.AtlasBounds.Bottom - (glyph.AtlasBounds.Top - glyph.AtlasBounds.Bottom) + 0.5, 1),
+                (int)Math.Round(glyph.AtlasBounds.Right - glyph.AtlasBounds.Left - 1, 1),
+                (int)Math.Round(glyph.AtlasBounds.Top - glyph.AtlasBounds.Bottom - 1, 1));
 
             _CursorBounds = new RectangleF(
                 (float)Math.Round(glyph.PlaneBounds.Left, 7) * font.FontSize,

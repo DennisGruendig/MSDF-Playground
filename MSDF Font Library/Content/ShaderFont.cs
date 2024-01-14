@@ -16,9 +16,9 @@ namespace MSDF_Font_Library.Content
         [ContentSerializer] private readonly Dictionary<char, Glyph> _Glyphs;
         [ContentSerializer] private readonly byte[] _AtlasBitmap;
         [ContentSerializer] private readonly int _DistanceRange;
-        [ContentSerializer] private readonly int _FontSize;
         [ContentSerializer] private readonly int _AtlasWidth;
         [ContentSerializer] private readonly int _AtlasHeight;
+        [ContentSerializer] private readonly float _FontSize;
         [ContentSerializer] private readonly float _Height;
         [ContentSerializer] private readonly float _LineHeight;
         [ContentSerializer] private readonly float _Ascender;

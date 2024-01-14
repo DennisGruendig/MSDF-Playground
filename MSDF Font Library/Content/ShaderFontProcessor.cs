@@ -16,8 +16,8 @@ namespace MSDF_Font_Library.Content
     {
         [DisplayName("Resolution")]
         [Description("Resolution of generated fonts")]
-        [DefaultValue(128)]
-        public virtual uint Resolution { get; set; } = 128;
+        [DefaultValue(256)]
+        public virtual uint Resolution { get; set; } = 256;
 
         [DisplayName("Distance Range")]
         [Description("Distance field range, in pixels")]
@@ -54,10 +54,10 @@ namespace MSDF_Font_Library.Content
 
             JsonRoot atlas = CreateFontAtlas();
 
-            if (!File.Exists(_ImportData.Bitmap))
-                throw new InvalidOperationException("Could not find Atlas.bmp");
+            if (!File.Exists(_ImportData.AtlasImage))
+                throw new InvalidOperationException("Could not find Atlas.png");
 
-            byte[] bitmap = File.ReadAllBytes(_ImportData.Bitmap);
+            byte[] bitmap = File.ReadAllBytes(_ImportData.AtlasImage);
 
             if (!KeepTemp)
                 Directory.Delete(_ImportData.TempFolder, true);
@@ -68,9 +68,9 @@ namespace MSDF_Font_Library.Content
         private JsonRoot CreateFontAtlas()
         {
             StringBuilder args = new StringBuilder();
-            args.Append($"-font \"{_ImportData.FontFile}\" ");
-            args.Append($"-imageout \"{_ImportData.Bitmap}\" ");
+            args.Append($"-font \"{_ImportData.FontFile}\" -scanline -type mtsdf ");
             args.Append($"-size {Resolution} -pxrange {DistanceRange} ");
+            args.Append($"-imageout \"{_ImportData.AtlasImage}\" ");
             args.Append($"-json \"{_ImportData.Json}\" ");
             args.Append($"-charset \"{_ImportData.Charset}\" ");
 

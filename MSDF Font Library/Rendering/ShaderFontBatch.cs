@@ -12,26 +12,24 @@ namespace MSDF_Font_Library.Rendering
 {
     public class ShaderFontBatch
     {
-        //private GraphicsDevice _GraphicsDevice;
         private SpriteBatch _spriteBatch;
         private Effect _shader;
         private bool _beginCalled;
         private TextString _textString;
 
         public Color ForegroundColor { get; set; }
-        public Color BackgroundColor { get; set; }
         public ShaderFont Font { get; set; }
+        public bool PixelPosition;
 
         public ShaderFontBatch(GraphicsDevice graphicsDevice, ShaderFont font, Effect shader, Color? foregroundColor = null, Color? backgroundColor = null)
         {
-            //_GraphicsDevice = graphicsDevice;
             _spriteBatch = new SpriteBatch(graphicsDevice);
             _shader = shader;
             _beginCalled = false;
             _textString = new TextString(font);
             Font = font;
             ForegroundColor = foregroundColor ?? Color.Black;
-            BackgroundColor = backgroundColor ?? Color.Transparent;
+            PixelPosition = true;
         }
 
         public void Begin(float scale = 1)
@@ -41,7 +39,9 @@ namespace MSDF_Font_Library.Rendering
             _beginCalled = true;
 
             _spriteBatch.Begin(effect: _shader);
+            //_shader.Parameters["pxOffset"].SetValue(scale);
             _shader.Parameters["pxRange"].SetValue(Font.DistanceRange);
+            //_shader.Parameters["pxRange"].SetValue(scale);
             _shader.Parameters["textureSize"].SetValue(Font.AtlasSize);
             _shader.Parameters["fgColor"].SetValue(ForegroundColor.ToVector4());
         }
@@ -64,13 +64,14 @@ namespace MSDF_Font_Library.Rendering
 
             for (int i = 0; i < _textString.DrawCallBuffer.Length; i++)
             {
-                _spriteBatch.Draw(
-                    Font.AtlasTexture,
-                    _textString.DrawCallBuffer[i].Position,
-                    _textString.DrawCallBuffer[i].SourceRectangle,
-                    Color.White, 0f, Vector2.Zero,
-                    _textString.DrawCallBuffer[i].Scale,
-                    SpriteEffects.None, 0f);
+                if (_textString.Text[i] != 32)
+                    _spriteBatch.Draw(
+                        Font.AtlasTexture,
+                        _textString.DrawCallBuffer[i].Position,
+                        _textString.DrawCallBuffer[i].SourceRectangle,
+                        Color.White, 0f, Vector2.Zero,
+                        _textString.DrawCallBuffer[i].Scale,
+                        SpriteEffects.None, 0f);
             }
         }
 
