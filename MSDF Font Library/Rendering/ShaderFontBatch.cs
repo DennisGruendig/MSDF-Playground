@@ -39,9 +39,8 @@ namespace MSDF_Font_Library.Rendering
             _beginCalled = true;
 
             _spriteBatch.Begin(effect: _shader);
-            //_shader.Parameters["pxOffset"].SetValue(scale);
+            _shader.Parameters["smoothing"].SetValue(scale);
             _shader.Parameters["pxRange"].SetValue(Font.DistanceRange);
-            //_shader.Parameters["pxRange"].SetValue(scale);
             _shader.Parameters["textureSize"].SetValue(Font.AtlasSize);
             _shader.Parameters["fgColor"].SetValue(ForegroundColor.ToVector4());
         }
