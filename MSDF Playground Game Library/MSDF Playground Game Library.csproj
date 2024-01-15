@@ -3,14 +3,16 @@
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Rendering\**" />
+    <EmbeddedResource Remove="Rendering\**" />
+    <None Remove="Rendering\**" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.1.303">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MSDF Font Library\MSDF Font Library.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Rendering\" />
   </ItemGroup>
 </Project>
