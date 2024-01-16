@@ -74,11 +74,23 @@ namespace MSDF_Playground_Game_Library
 
             if (gameTime.TotalGameTime >= next)
             {
-                next = gameTime.TotalGameTime.Add(TimeSpan.FromMilliseconds(5000));
+                next = gameTime.TotalGameTime.Add(TimeSpan.FromMilliseconds(1000));
+            }
+
+            double time = gameTime.TotalGameTime.TotalSeconds * 0.5f % 1;
+
+            for (int i = 0; i < _sin.Length; i++)
+            {
+                _sin[i] = (float)Math.Sin(MathHelper.TwoPi * (time + (1f / _sin.Length * i)));
+                _cos[i] = (float)Math.Cos(MathHelper.TwoPi * (time + (1f / _sin.Length * i)));
             }
 
             base.Update(gameTime);
         }
+
+        private float[] _sin = new float[10];
+        private float[] _cos = new float[10];
+        private Random _rnd = new();
 
         protected override void Draw(GameTime gameTime)
         {
@@ -101,8 +113,19 @@ namespace MSDF_Playground_Game_Library
                 frameMessage = $"µs: {spanindex.ToString("000")} / {spanlist.Length.ToString("000")}";
 
             _LineBatcher.Begin();
-            _LineBatcher.Draw(new Vector3(10, 10, 0), new Vector3(vp.Width - 10, 10, 0), new Vector3(vp.Width - 10, vp.Height - 10, 0));
-            _LineBatcher.Draw(new Vector3(10, 100, 0), new Vector3(50, 120, 0), new Vector3(30, 140, 0));
+            int count = 200;
+            float offsetX = _graphics.PreferredBackBufferWidth / (float)count;
+            float offsetY = _graphics.PreferredBackBufferHeight * 0.5f;
+            float height = 5f;
+           
+            for (int i = 0; i < count; i++)
+            {
+                float sin1 = _sin[i % _sin.Length];
+                float sin2 = _sin[(i + 1) % _sin.Length % count];
+                
+                    _LineBatcher.Draw(new Vector3(i * offsetX, offsetY + sin1 * height, 0), new Vector3(i * offsetX + offsetX, offsetY + sin2 * height, 0), Color.LightBlue);
+            }
+
             _LineBatcher.End();
 
             base.Draw(gameTime);

@@ -32,9 +32,9 @@ namespace MSDF_Playground_Game_Library.Graphics_Test_1
             }
 
             //_vertexBuffer = new DynamicVertexBuffer(_graphicsDevice, typeof(LineVertex), _vertices.Length, BufferUsage.WriteOnly);
-            //_vertexBuffer = new DynamicVertexBuffer(_graphicsDevice, typeof(VertexPositionColor), _vertices.Length, BufferUsage.WriteOnly);
-            //_indexBuffer = new IndexBuffer(_graphicsDevice, typeof(uint), _indices.Length, BufferUsage.WriteOnly);
-            //_indexBuffer.SetData(_indices);
+            _vertexBuffer = new DynamicVertexBuffer(_graphicsDevice, typeof(VertexPositionColor), _vertices.Length, BufferUsage.WriteOnly);
+            _indexBuffer = new IndexBuffer(_graphicsDevice, typeof(uint), _indices.Length, BufferUsage.WriteOnly);
+            _indexBuffer.SetData(_indices);
         }
 
         ~LineBatcher()
@@ -66,18 +66,16 @@ namespace MSDF_Playground_Game_Library.Graphics_Test_1
 
         private bool _beginCalled;
 
-        public void Draw(Vector3 position1, Vector3 position2, Vector3 position3, Color? color = null, float thickness = 1f)
+        public void Draw(Vector3 position1, Vector3 position2, Color? color = null, float thickness = 1f)
         {
             if (_vertices.Length < _vertexCount + 3) return;
 
             var actColor = color ?? Color.White;
             //_vertices[_vertexCount++] = new LineVertex(position1, thickness, actColor);
             //_vertices[_vertexCount++] = new LineVertex(position2, thickness, actColor);
-            _vertices[_vertexCount++] = new VertexPositionColor(position1, Color.Red);
-            _vertices[_vertexCount++] = new VertexPositionColor(position2, Color.Lime);
-            _vertices[_vertexCount++] = new VertexPositionColor(position2, Color.Green);
-            _vertices[_vertexCount++] = new VertexPositionColor(position3, Color.LightBlue);
-            _lineCount += 2;
+            _vertices[_vertexCount++] = new VertexPositionColor(position1, actColor);
+            _vertices[_vertexCount++] = new VertexPositionColor(position2, actColor);
+            _lineCount += 1;
         }
 
         public void Begin(Matrix? view = null, Matrix? projection = null)
@@ -105,13 +103,16 @@ namespace MSDF_Playground_Game_Library.Graphics_Test_1
 
             //_effect.Parameters["WorldViewProjection"].SetValue(_view * _projection);
 
-            //_vertexBuffer.SetData(_vertices);
-            //_graphicsDevice.SetVertexBuffer(_vertexBuffer);
+            _vertexBuffer.SetData(_vertices);
+            _graphicsDevice.SetVertexBuffer(_vertexBuffer);
 
-            //_graphicsDevice.Indices = _indexBuffer;
+            _graphicsDevice.Indices = _indexBuffer;
 
-            //_graphicsDevice.DepthStencilState = DepthStencilState.Default;
-            //_graphicsDevice.BlendState = BlendState.AlphaBlend;
+            //if (_graphicsDevice.DepthStencilState != DepthStencilState.Default)
+            //    return;
+
+            //if (_graphicsDevice.BlendState != BlendState.AlphaBlend)
+            //    return;
 
             _effect.View = _view;
             _effect.Projection = _projection;
@@ -120,7 +121,7 @@ namespace MSDF_Playground_Game_Library.Graphics_Test_1
             for (int i = 0; i < passes.Count; i++)
             {
                 passes[0].Apply();
-                _graphicsDevice.DrawUserIndexedPrimitives(PrimitiveType.LineList, _vertices, 0, _vertexCount, _indices, 0, _lineCount);
+                _graphicsDevice.DrawIndexedPrimitives(PrimitiveType.LineList, 0, 0, _lineCount);
             }
 
             _lineCount = 0;
