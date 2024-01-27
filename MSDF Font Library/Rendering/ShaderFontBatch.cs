@@ -32,14 +32,14 @@ namespace MSDF_Font_Library.Rendering
             PixelPosition = true;
         }
 
-        public void Begin(float scale = 1)
+        public void Begin(float scale = 1, bool smoothing = true)
         {
             if (_beginCalled)
                 throw new Exception("Begin cannot be called again until End has been successfully called.");
             _beginCalled = true;
 
             _spriteBatch.Begin(effect: _shader);
-            _shader.Parameters["smoothing"].SetValue(scale);
+            _shader.Parameters["smoothing"].SetValue(smoothing ? 1f : 0f);
             _shader.Parameters["pxRange"].SetValue(Font.DistanceRange);
             _shader.Parameters["textureSize"].SetValue(Font.AtlasSize);
             _shader.Parameters["fgColor"].SetValue(ForegroundColor.ToVector4());

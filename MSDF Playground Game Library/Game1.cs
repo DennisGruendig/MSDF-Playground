@@ -33,6 +33,7 @@ namespace MSDF_Playground_Game_Library
         private TimeSpan[] spanlist = new TimeSpan[500];
         private int spanindex = 0;
         private bool showSpan = false;
+        private bool smooting = true;
 
         private VerticalAlignment valign = VerticalAlignment.Base;
         private HorizontalAlignment halign = HorizontalAlignment.Center;
@@ -106,6 +107,7 @@ namespace MSDF_Playground_Game_Library
             {
                 Size = 1f;
                 Position = Vector2.Zero;
+                smooting = true;
             }
             else
             {
@@ -146,18 +148,22 @@ namespace MSDF_Playground_Game_Library
                 else if (valign == VerticalAlignment.Middle)
                     valign = VerticalAlignment.Top;
 
-            //if ((kstate.IsKeyDown(Keys.Space) && !pkstate.IsKeyDown(Keys.Space)) || gameTime.TotalGameTime >= next)
+            if (kstate.IsKeyDown(Keys.Enter) && !pkstate.IsKeyDown(Keys.Enter))
+            {
+                smooting = !smooting;
+            }
+
             if (kstate.IsKeyDown(Keys.Space) && !pkstate.IsKeyDown(Keys.Space))
             {
                 _fontIndex = _fontIndex < _fonts.Count - 1 ? _fontIndex + 1 : 0;
                 _ShaderFontBatch.Font = _fonts.ElementAt(_fontIndex).Value;
             }
 
-            if (kstate.IsKeyDown(Keys.Enter) && !pkstate.IsKeyDown(Keys.Enter))
-            {
-                _fonts.TryGetValue("GrapeSoda", out ShaderFont font);
-                _ShaderFontBatch.Font = font;
-            }
+            //if (kstate.IsKeyDown(Keys.Enter) && !pkstate.IsKeyDown(Keys.Enter))
+            //{
+            //    _fonts.TryGetValue("GrapeSoda", out ShaderFont font);
+            //    _ShaderFontBatch.Font = font;
+            //}
 
             if (gameTime.TotalGameTime >= next)
             {
@@ -226,10 +232,10 @@ namespace MSDF_Playground_Game_Library
             start = DateTime.Now; 
             Vector2 pos = new Vector2(_graphics.PreferredBackBufferWidth * 0.5f + Position.X, _graphics.PreferredBackBufferHeight * 0.5f + Position.Y);
 
-            _ShaderFontBatch.Begin(Size);
+            _ShaderFontBatch.Begin(Size, smooting);
             _ShaderFontBatch.DrawString($"Font {_fontIndex + 1} Name: {Font.Name} - {frameMessage}", new Vector2(5, (int)(5 * uiScale.Y)), uiScale, HorizontalAlignment.Left, VerticalAlignment.Top);
-            _ShaderFontBatch.DrawString($"Scale: {Size.ToString("0.000")}; Pos: {pos.X.ToString("0.0")} / {pos.Y.ToString("0.0")}", new Vector2(5, (int)(5 + Font.ActualLineHeight * uiScale.Y)), uiScale, HorizontalAlignment.Left, VerticalAlignment.Top);
-            _ShaderFontBatch.DrawString($"{halign} / {valign}", pos, new Vector2(1), halign, valign);
+            _ShaderFontBatch.DrawString($"Scale: {Size:0.000}; Pos: {pos.X:0.0)} / {pos.Y:0.0} Smooth: {smooting}", new Vector2(5, (int)(5 + Font.ActualLineHeight * uiScale.Y)), uiScale, HorizontalAlignment.Left, VerticalAlignment.Top);
+            _ShaderFontBatch.DrawString($"{halign} / {valign}", pos, new Vector2(Size), halign, valign);
             _ShaderFontBatch.End();
 
             spanlist[spanindex++] = DateTime.Now - start;
