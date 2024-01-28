@@ -50,7 +50,7 @@
 /processorParam:Resolution=256
 /processorParam:DistanceRange=2
 /processorParam:CharsetDefinition=
-/processorParam:KeepTemp=False
+/processorParam:KeepTemp=True
 /processorParam:IgnoreKerning=False
 /build:../../MSDF Playground Game Library/Content/Fonts/Detailed/Super Bubble.ttf;Fonts/Detailed/Super Bubble.ttf
 

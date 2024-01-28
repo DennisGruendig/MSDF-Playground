@@ -27,7 +27,7 @@ namespace MSDF_Playground_Game_Library
 
         private float Size = 1;
         private Vector2 Position = new Vector2(0, 0);
-        private Vector2 uiScale = new Vector2(.5f, .5f);
+        private Vector2 uiScale = new Vector2(.25f, .25f);
 
         private DateTime start = DateTime.Now;
         private TimeSpan[] spanlist = new TimeSpan[500];
@@ -111,12 +111,14 @@ namespace MSDF_Playground_Game_Library
             }
             else
             {
-                float shifting = kstate.IsKeyDown(Keys.LeftShift) ? 0.1f : 1f;
-
                 if (mstate.LeftButton == ButtonState.Pressed)
-                    Position += (mstate.Position - pmstate.Position).ToVector2() * shifting;
+                    Position += (mstate.Position - pmstate.Position).ToVector2();
 
                 Size += 0.001f / 120f * (mstate.ScrollWheelValue - pmstate.ScrollWheelValue);
+
+                if (kstate.IsKeyDown(Keys.Add)) Size += 0.01f;
+                if (kstate.IsKeyDown(Keys.Subtract)) Size -= 0.01f;
+
                 if (Size < 0) Size = 0;
             }
 
@@ -234,7 +236,7 @@ namespace MSDF_Playground_Game_Library
 
             _ShaderFontBatch.Begin(Size, smooting);
             _ShaderFontBatch.DrawString($"Font {_fontIndex + 1} Name: {Font.Name} - {frameMessage}", new Vector2(5, (int)(5 * uiScale.Y)), uiScale, HorizontalAlignment.Left, VerticalAlignment.Top);
-            _ShaderFontBatch.DrawString($"Scale: {Size:0.000}; Pos: {pos.X:0.0)} / {pos.Y:0.0} Smooth: {smooting}", new Vector2(5, (int)(5 + Font.ActualLineHeight * uiScale.Y)), uiScale, HorizontalAlignment.Left, VerticalAlignment.Top);
+            _ShaderFontBatch.DrawString($"Scale: {Size:0.000}; Pos: {pos.X:0.0} / {pos.Y:0.0} Smooth: {smooting}", new Vector2(5, (int)(5 + Font.ActualLineHeight * uiScale.Y)), uiScale, HorizontalAlignment.Left, VerticalAlignment.Top);
             _ShaderFontBatch.DrawString($"{halign} / {valign}", pos, new Vector2(Size), halign, valign);
             _ShaderFontBatch.End();
 
